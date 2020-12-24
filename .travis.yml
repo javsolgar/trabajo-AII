@@ -1,0 +1,19 @@
+dist: xenial
+services:
+- mysql
+language: python
+python:
+- '3.8'
+install:
+- pip install -r requirements.txt
+script:
+- cd trabajoAII
+- cp travis_local_settings.py local_settings.py
+- cd ..
+- coverage run --branch --source=. ./manage.py test --keepdb
+notifications:
+  email:
+    recipients:
+      - javiersgjavi@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
