@@ -10,7 +10,7 @@ script:
 - cd trabajoAII
 - cp travis_local_settings.py local_settings.py
 - cd ..
-- coverage run --branch --source=. ./manage.py test --keepdb
+- python ./manage.py test
 notifications:
   email:
     recipients:
