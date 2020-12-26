@@ -1,2 +1,6 @@
 django==3.1.2
 djangorestframework==3.12.2
+numpy==1.19.2
+whoosh==2.7.4
+beautifulsoup4==4.9.3
+lxml==4.6.1

@@ -55,8 +55,7 @@ ROOT_URLCONF = 'trabajoAII.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates' / 'application',
-                 BASE_DIR / 'templates' / 'new_videogame']
+        'DIRS': [BASE_DIR / 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,7 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 MODULES = [
     'application',
-    'new_videogame',
+    'news_videogame',
 ]

@@ -12,6 +12,6 @@ class PostProcTestCase(APITestCase):
     def tearDown(self):
         self.client = None
 
-    def test(self):
+    def test_scap_news(self):
         response = self.client.get('/scrap/')
         self.assertEqual(response.status_code, 200)
