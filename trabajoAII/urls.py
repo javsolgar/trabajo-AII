@@ -14,11 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
 
 from application import views
+import news_videogame
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.inicio)
 ]
+
+for module in settings.MODULES:
+    urlpatterns += [
+        path('', include('{}.urls'.format(module)))
+    ]
