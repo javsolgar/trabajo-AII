@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 
 from application import views
-import news_videogame
+import news_game
 
 urlpatterns = [
     path('admin/', admin.site.urls),
