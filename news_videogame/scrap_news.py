@@ -2,16 +2,12 @@ import os
 import urllib.request
 from bs4 import BeautifulSoup
 from whoosh.index import create_in, open_dir
-from whoosh.fields import Schema, TEXT, KEYWORD, ID
-from whoosh.qparser import QueryParser
-
-urls = ['https://www.3djuegos.com/novedades/todo/juegos/0f0f0f0/fecha/',
-        'https://www.3djuegos.com/novedades/todo/juegos/1pf0f0f0/fecha/']
+from whoosh.fields import Schema, TEXT, ID
 
 index = './indices/IndexNewsVideogames'
 
 
-def obten_lista_noticias():
+def obten_lista_noticias(urls):
     soup_listas_noticias = []
     for url in urls:
         f = urllib.request.urlopen(url)
@@ -107,8 +103,12 @@ def almacena_noticias(soup_noticias):
 
 
 def descarga_noticias():
+
+    urls = ['https://www.3djuegos.com/novedades/todo/juegos/0f0f0f0/fecha/',
+            'https://www.3djuegos.com/novedades/todo/juegos/1pf0f0f0/fecha/']
+
     crea_index()
-    soup_lista_noticias = obten_lista_noticias()
+    soup_lista_noticias = obten_lista_noticias(urls)
     urls_noticias = extrae_url_noticias(soup_lista_noticias)
     soup_noticias = obten_info_noticias(urls_noticias)
     almacena_noticias(soup_noticias)
