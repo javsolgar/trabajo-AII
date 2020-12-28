@@ -11,7 +11,8 @@ def get_schema():
                   desarrollador=ID(stored=True),
                   generos=KEYWORD(stored=True),
                   url_juego=ID(stored=True),
-                  jugadores=KEYWORD(stored=True))
+                  jugadores=KEYWORD(stored=True),
+                  url_imagen=ID(stored=True))
 
 
 def crea_index_games(index):
@@ -58,6 +59,10 @@ def almacena_juegos(soup_juegos, index_games):
             # Url_juego
             enlace_titulo = soup.find('strong').find_parent()
             url_juego = enlace_titulo['href']
+
+            # Url_imagen
+            url_imagen = soup.find('img', class_=['dib', 'mar_b10'])['src']
+
 
             # Plataformas
             enlaces_plataformas = enlace_titulo.find_next_sibling() \
@@ -106,7 +111,8 @@ def almacena_juegos(soup_juegos, index_games):
                                 desarrollador=desarrollador,
                                 generos=generos,
                                 url_juego=url_juego,
-                                jugadores=jugadores)
+                                jugadores=jugadores,
+                                url_imagen=url_imagen)
             juegos_almacenados.append(titulo)
 
     writer.commit()
