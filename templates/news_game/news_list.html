@@ -15,7 +15,12 @@
         <h3><a href="{{ noticia.2 }}">{{ noticia.0 }}</a></h3>
         <ul>
             <li>Escritor: {{ noticia.1 }}</li>
-            <li>Juego: <a href="{{ noticia.4 }}">{{ noticia.3 }}</a></li>
+            {% if noticia.3 == '-' %}
+                <li>Juego: {{ noticia.3 }}</li>
+            {% else %}
+                <li>Juego: <a href="{{ noticia.4 }}">{{ noticia.3 }}</a></li>
+            {% endif %}
+
         </ul>
         <hr>
     {% endfor %}

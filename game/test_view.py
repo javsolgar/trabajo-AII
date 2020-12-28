@@ -3,7 +3,7 @@ from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 from game.scrap_games import crea_index_games, get_url_juegos, obten_juegos, almacena_juegos
 
-#from news_game.scrap_news import obten_lista_noticias, obten_info_noticias, crea_index, extrae_url_noticias, \
+# from news_game.scrap_news import obten_lista_noticias, obten_info_noticias, crea_index, extrae_url_noticias, \
 #    almacena_noticias
 
 index_news = './indices/IndexNewsGames'
@@ -18,7 +18,9 @@ class PostProcTestCase(APITestCase):
     def tearDown(self):
         self.client = None
 
-
+    def test_list_games(self):
+        response = self.client.get('/games/')
+        self.assertEqual(response.status_code, 200)
 
     def test_scrap_news(self):
         crea_index_games(index_games)
