@@ -1,0 +1,33 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>Lista de juegos</title>
+{% endblock %}
+
+{% block encabezado %}
+    <h1>Lista de juegos</h1>
+
+{% endblock %}
+
+{% block contenido %}
+<hr>
+    {% for juego in juegos %}
+
+<table class="default">
+
+  <tr>
+
+    <td><img src="{{ juego.0 }}"></td>
+
+      <td></td>
+
+      <td><a href="/games/{{ juego.1 }}">{{ juego.1 }}</a></td>
+
+    <td></td>
+
+  </tr>
+
+</table>
+        <hr>
+    {% endfor %}
+{% endblock %}

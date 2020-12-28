@@ -88,7 +88,7 @@ def almacena_juegos(soup_juegos, index_games):
             # Jugadores
             tabla2 = ficha.find_all('dl')[1]
             fila_jugadores = False
-            jugadores = '_'
+            jugadores = '-'
             for elemento in tabla2:
                 if elemento.string == 'Jugadores:':
                     fila_jugadores = True
