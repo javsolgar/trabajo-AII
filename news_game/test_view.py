@@ -15,6 +15,10 @@ class PostProcTestCase(APITestCase):
     def tearDown(self):
         self.client = None
 
+    def test_list_news(self):
+        response = self.client.get('/news/')
+        self.assertEqual(response.status_code, 200)
+
     def test_scrap_news(self):
         url = ['https://www.3djuegos.com/novedades/todo/juegos/0f0f0f0/fecha/']
         crea_index(index)
