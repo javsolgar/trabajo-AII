@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from whoosh.index import open_dir
+from whoosh.qparser import QueryParser
 
 from game.scrap_games import descarga_juegos
 
@@ -24,4 +25,23 @@ def list_games(request):
             res.append([url_imagen, titulo])
 
     ix.close()
-    return render(request, 'game/games_list.html', {'juegos': res})
+    return render(request, 'game/list.html', {'juegos': res})
+
+
+def show_game(request, game_title):
+    ix = open_dir(index_games)
+    with ix.searcher() as searcher:
+        query = QueryParser('titulo', ix.schema).parse(game_title)
+        result = searcher.search(query)
+        for juego in result:
+
+            res = [juego['titulo'],
+                   juego['plataformas'],
+                   juego['desarrollador'],
+                   juego['generos'].replace(',',', '),
+                   juego['url_juego'],
+                   juego['jugadores'],
+                   juego['url_imagen']]
+
+    ix.close()
+    return render(request, 'game/show.html', {'juego': res})

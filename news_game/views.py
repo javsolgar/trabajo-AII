@@ -10,8 +10,8 @@ def scrap_news(request):
     descarga_noticias(index)
     return render(request, 'news_game/scrap_news.html')
 
-def list_news(request):
 
+def list_news(request):
     ix = open_dir(index)
     res = []
     with ix.searcher() as searcher:
@@ -21,9 +21,8 @@ def list_news(request):
             escritor = noticia['escritor']
             url_noticia = noticia['url_noticia']
             juego = noticia['juego']
-            url_juego = noticia['url_juego']
 
-            res.append([titulo, escritor, url_noticia, juego, url_juego])
+            res.append([titulo, escritor, url_noticia, juego])
 
     ix.close()
-    return render(request,'news_game/news_list.html', {'noticias': res})
+    return render(request, 'news_game/list.html', {'noticias': res})

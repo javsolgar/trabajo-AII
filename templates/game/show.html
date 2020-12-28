@@ -1,0 +1,51 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>{{ juego.0 }}</title>
+{% endblock %}
+
+{% block encabezado %}
+    <h1>Lista de juegos</h1>
+
+{% endblock %}
+
+{% block contenido %}
+<hr>
+
+
+<table class="table table-striped">
+    <td>
+      <td><img src="{{ juego.6 }}"></td>
+        <td>
+            <table class="table table-striped">
+
+                <tr>
+                    <th>Título:</th>
+                    <td>{{ juego.0 }}</td>
+                </tr>
+                <tr>
+                    <th>Plataformas:</th>
+                    <td>{{ juego.1 }}</td>
+                </tr>
+                <tr>
+                    <th>Desarrollador:</th>
+                    <td>{{ juego.2 }}</td>
+                </tr>
+                <tr>
+                    <th>Generos:</th>
+                    <td>{{ juego.3 }}</td>
+                </tr>
+                {% if juego.5 != '-' %}
+                <tr>
+                    <th>Número de jugadores:</th>
+                    <td>{{ juego.5 }}</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td></td><a class="btn" href="{{ juego.4 }}">Enlace original</a></tr>
+                </tr>
+            </table>
+        </td>
+    </td>
+</table>
+{% endblock %}
