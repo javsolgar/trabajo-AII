@@ -1,5 +1,3 @@
-import os
-import django
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 

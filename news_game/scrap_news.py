@@ -4,8 +4,6 @@ from bs4 import BeautifulSoup
 from whoosh.index import create_in, open_dir
 from whoosh.fields import Schema, TEXT, ID
 
-index = './indices/IndexNewsVideogames'
-
 
 def obten_lista_noticias(urls):
     soup_listas_noticias = []
@@ -32,13 +30,11 @@ def obten_info_noticias(urls_noticias):
 def extrae_url_noticias(soup_noticias):
     urls_noticias = []
     for soup in soup_noticias:
-        url_noticia = soup.find('a')['href']
-        urls_noticias.append(url_noticia)
+        tipo = soup.find('span', class_=['upp', 'cpl_plat', 'b']).string.split(' ')
+        if 'Noticia' in tipo:
+            url_noticia = soup.find('a')['href']
+            urls_noticias.append(url_noticia)
     return urls_noticias
-
-
-def save_noticias():
-    pass
 
 
 def get_schema():
@@ -51,13 +47,13 @@ def get_schema():
                   url_juego=ID(stored=True))
 
 
-def crea_index():
+def crea_index(index):
     if not os.path.exists(index):
         os.mkdir(index)
     ix = create_in(index, schema=get_schema())
 
 
-def almacena_noticias(soup_noticias):
+def almacena_noticias(soup_noticias, index):
     ix = open_dir(index)
     writer = ix.writer()
     for soup in soup_noticias:
@@ -102,18 +98,22 @@ def almacena_noticias(soup_noticias):
     writer.commit()
 
 
-def descarga_noticias():
-
+def descarga_noticias(index):
     urls = ['https://www.3djuegos.com/novedades/todo/juegos/0f0f0f0/fecha/',
             'https://www.3djuegos.com/novedades/todo/juegos/1pf0f0f0/fecha/']
 
-    crea_index()
+    crea_index(index)
     soup_lista_noticias = obten_lista_noticias(urls)
     urls_noticias = extrae_url_noticias(soup_lista_noticias)
     soup_noticias = obten_info_noticias(urls_noticias)
-    almacena_noticias(soup_noticias)
-    print('noticias descargadas satisfactoriamente')
+    almacena_noticias(soup_noticias, index)
+
+    ix = open_dir(index)
+    with ix.searcher() as searcher:
+        all_news = searcher.doc_count_all()
+    print(all_news, 'noticias descargadas satisfactoriamente')
 
 
 if __name__ == '__main__':
-    descarga_noticias()
+    index = '../indices/IndexNewsGames'
+    descarga_noticias(index)
