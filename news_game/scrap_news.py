@@ -30,8 +30,10 @@ def obten_info_noticias(urls_noticias):
 def extrae_url_noticias(soup_noticias):
     urls_noticias = []
     for soup in soup_noticias:
-        url_noticia = soup.find('a')['href']
-        urls_noticias.append(url_noticia)
+        tipo = soup.find('span', class_=['upp', 'cpl_plat', 'b']).string.split(' ')
+        if 'Noticia' in tipo:
+            url_noticia = soup.find('a')['href']
+            urls_noticias.append(url_noticia)
     return urls_noticias
 
 
@@ -105,7 +107,11 @@ def descarga_noticias(index):
     urls_noticias = extrae_url_noticias(soup_lista_noticias)
     soup_noticias = obten_info_noticias(urls_noticias)
     almacena_noticias(soup_noticias, index)
-    print('noticias descargadas satisfactoriamente')
+
+    ix = open_dir(index)
+    with ix.searcher() as searcher:
+        all_news = searcher.doc_count_all()
+    print(all_news, 'noticias descargadas satisfactoriamente')
 
 
 if __name__ == '__main__':

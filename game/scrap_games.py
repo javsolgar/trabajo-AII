@@ -118,7 +118,10 @@ def descarga_juegos(index_games, index_news):
     soup_juegos = obten_juegos(url_juegos)
     almacena_juegos(soup_juegos, index_games)
 
-    print('juegos descargados satisfactoriamente')
+    ix = open_dir(index_games)
+    with ix.searcher() as searcher:
+        all_games = searcher.doc_count_all()
+    print(all_games, 'juegos descargados satisfactoriamente')
 
 
 if __name__ == '__main__':
