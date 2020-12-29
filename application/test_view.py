@@ -10,6 +10,6 @@ class PostProcTestCase(APITestCase):
     def tearDown(self):
         self.client = None
 
-    def test(self):
-        response = self.client.get('/')
+    def test_login(self):
+        response = self.client.get('/accounts/login/')
         self.assertEqual(response.status_code, 200)
