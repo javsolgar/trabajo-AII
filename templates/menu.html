@@ -13,7 +13,7 @@
     <li><a href="/news">Noticias</a></li>
     <li><a href="/games">Juegos</a></li>
 
-    <li><b>Opciones de usuario</b></li>
+    <li><b>Opciones para {{ user.get_username }}:</b></li>
     <ul>
     {% if not user.is_authenticated %}
         <li><a href="/accounts/login">Iniciar sesión</a> / <a href="/registro">Registrarse</a></li>
