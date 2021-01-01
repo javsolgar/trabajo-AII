@@ -17,7 +17,7 @@ class UntitledTestCase(LiveServerTestCase):
     def setUp(self):
         call_command('loaddata', 'initial_data.json', verbosity=0)
         options = webdriver.ChromeOptions(ChromeDriverManager().install())
-        options.headless = True
+        options.headless = False
         self.driver = webdriver.Chrome(options=options)
         self.base_url = self.live_server_url
         self.accept_next_alert = True
