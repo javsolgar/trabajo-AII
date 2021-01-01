@@ -1,0 +1,19 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>Inicio de sesión</title>
+{% endblock %}
+
+{% block encabezado %}
+    <h1>Inicio de sesión</h1>
+
+{% endblock %}
+
+{% block contenido %}
+<h2>Inicio de sesión</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+{% endblock %}

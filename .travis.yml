@@ -1,19 +1,31 @@
 dist: xenial
 services:
-- mysql
+  - mysql
 language: python
 python:
-- '3.8'
+  - '3.8'
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
+  - pip install webdriver-manager
+before_script:
+  - wget "https://github.com/mozilla/geckodriver/releases/download/v0.28.0/geckodriver-v0.28.0-linux64.tar.gz"
+  - tar xfz geckodriver-v0.28.0-linux64.tar.gz
+  - sudo mv geckodriver /usr/local/bin
+  - 'export DISPLAY=:99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
 script:
-- cd trabajoAII
-- cp travis_local_settings.py local_settings.py
-- cd ..
-- python ./manage.py test
+  - cd trabajoAII
+  - cp travis_local_settings.py local_settings.py
+  - cd ..
+  - python ./manage.py makemigrations application
+  - python ./manage.py makemigrations game
+  - python ./manage.py makemigrations news_game
+  - python ./manage.py migrate
+  - python ./manage.py loaddata initial_data.json
+  - python ./manage.py test
 notifications:
   email:
     recipients:
       - javiersgjavi@gmail.com
-    on_success: never # default: change
+    on_success: change # default: change
     on_failure: always # default: always

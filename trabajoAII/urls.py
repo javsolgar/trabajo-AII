@@ -22,6 +22,7 @@ import news_game
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 for module in settings.MODULES:

@@ -10,7 +10,9 @@
 {% endblock %}
 
 {% block contenido %}
-<hr>
+    <h4>Tenemos un total de {{ cantidad }} noticias registradas:</h4>
+    <br>
+
     {% for noticia in noticias %}
         <h3><a href="{{ noticia.2 }}">{{ noticia.0 }}</a></h3>
         <ul>

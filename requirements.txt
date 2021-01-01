@@ -4,3 +4,4 @@ numpy==1.19.2
 whoosh==2.7.4
 beautifulsoup4==4.9.3
 lxml==4.6.1
+selenium==3.141.0

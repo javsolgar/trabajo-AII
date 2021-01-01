@@ -1,6 +1,7 @@
+from django.contrib.auth.models import User
 from whoosh.index import open_dir
 from rest_framework.test import APIClient
-from rest_framework.test import APITestCase
+from rest_framework.test import APITestCase, APIRequestFactory
 from game.scrap_games import crea_index_games, get_url_juegos, obten_juegos, almacena_juegos
 
 index_news = './indices/IndexNewsGames'
@@ -18,6 +19,10 @@ class PostProcTestCase(APITestCase):
     def test_list(self):
         response = self.client.get('/games/')
         self.assertEqual(response.status_code, 200)
+
+    def test_scrap_anonymous(self):
+        response = self.client.get('/scrap_games/')
+        self.assertEqual(response.status_code, 403)
 
     def test_show(self):
         ix = open_dir(index_news)
