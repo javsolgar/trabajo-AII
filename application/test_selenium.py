@@ -16,9 +16,9 @@ from django.core.management import call_command
 class UntitledTestCase(LiveServerTestCase):
     def setUp(self):
         call_command('loaddata', 'initial_data.json', verbosity=0)
-        options = webdriver.ChromeOptions(ChromeDriverManager().install())
-        options.headless = False
-        self.driver = webdriver.Chrome(options=options)
+        options = webdriver.FirefoxOptions()
+        options.headless = True
+        self.driver = webdriver.Firefox(options=options)
         self.base_url = self.live_server_url
         self.accept_next_alert = True
 

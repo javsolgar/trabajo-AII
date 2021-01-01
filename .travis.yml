@@ -8,18 +8,11 @@ install:
   - pip install -r requirements.txt
   - pip install webdriver-manager
 before_script:
-  - wget "https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz"
+  - wget "https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.28.0-linux64.tar.gz"
   - tar xfz geckodriver-v0.24.0-linux64.tar.gz
   - sudo mv geckodriver /usr/local/bin
   - 'export DISPLAY=:99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-
-  - wget -N http://chromedriver.storage.googleapis.com/83.0.4103/chromedriver_linux64.zip -P ~/
-  - unzip ~/chromedriver_linux64.zip -d ~/
-  - rm ~/chromedriver_linux64.zip
-  - sudo mv -f ~/chromedriver /usr/local/share/
-  - sudo chmod +x /usr/local/share/chromedriver
-  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 script:
   - cd trabajoAII
   - cp travis_local_settings.py local_settings.py
