@@ -34,8 +34,8 @@ class PostProcTestCase(APITestCase):
         username = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
         answers = {
             'username': username,
-            'password1': '52108883A',
-            'password2': '52108883A'
+            'password1': '65498732154A',
+            'password2': '65498732154A'
         }
         response = self.client.post('/registro/', answers)
         self.assertEqual(response.status_code, 200)

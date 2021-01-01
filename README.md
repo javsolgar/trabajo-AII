@@ -2,3 +2,14 @@
 
 # trabajo-AII
 Repositorio para el trabajo de la asignatura AII
+
+### Usuarios registrados:
+
+- admin:
+    - usuario: admin
+    - contraseña: admin
+    
+- prueba:
+    - usuario: prueba
+    - contraseña: 963852741A
+    

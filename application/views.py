@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+
+from application.decorators import redirect_if_authenticated
 
 
 def inicio(request):
     return render(request, 'application/inicio.html')
 
 
+@redirect_if_authenticated
 def registro(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
