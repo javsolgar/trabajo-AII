@@ -43,7 +43,7 @@ def get_schema():
                   texto=TEXT(stored=True),
                   escritor=TEXT(stored=True),
                   url_noticia=ID(stored=True),
-                  juego=ID(stored=True),
+                  juego=TEXT(stored=True),
                   url_juego=ID(stored=True))
 
 

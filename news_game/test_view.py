@@ -40,3 +40,20 @@ class PostProcTestCase(APITestCase):
             all_news = searcher.doc_count_all()
 
         self.assertEqual(all_news, 2)
+
+    def test_filtrado_noticias(self):
+        response = self.client.get('/news/filtro/')
+        self.assertEqual(response.status_code, 200)
+
+        lista_juegos = response.context['juegos']
+        self.assertNotEqual(len(lista_juegos), 0)
+        self.assertNotEqual(lista_juegos[0], '')
+        self.assertNotEqual(lista_juegos, None)
+
+        response2 = self.client.get('/news/filtrado/', {'juego': lista_juegos[0]})
+        self.assertEqual(response2.status_code, 200)
+
+        noticias = response2.context['noticias']
+        cantidad_noticias = response2.context['noticias']
+        self.assertNotEqual(len(noticias), 0)
+        self.assertNotEqual(cantidad_noticias, 0)
