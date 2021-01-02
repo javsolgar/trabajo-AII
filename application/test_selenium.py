@@ -17,7 +17,7 @@ class TestApplication(LiveServerTestCase):
     def setUp(self):
         call_command('loaddata', 'initial_data.json', verbosity=0)
         options = webdriver.FirefoxOptions()
-        options.headless = False
+        options.headless = True
         self.driver = webdriver.Firefox(options=options)
         self.base_url = self.live_server_url
 

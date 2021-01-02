@@ -44,7 +44,8 @@ def get_schema():
                   escritor=TEXT(stored=True),
                   url_noticia=ID(stored=True),
                   juego=TEXT(stored=True),
-                  url_juego=ID(stored=True))
+                  url_juego=ID(stored=True),
+                  url_imagen=ID(stored=True))
 
 
 def crea_index(index):
@@ -88,13 +89,18 @@ def almacena_noticias(soup_noticias, index):
         except AttributeError as e:
             url_juego = '-'
 
+        url_imagen = soup.find('img', class_=['br3', 'wi100'])['src']
+        if 'ficha' in url_imagen:
+            url_imagen='-'
+
         writer.add_document(titulo=titulo,
                             subtitulo=subtitulo,
                             texto=texto,
                             escritor=escritor,
                             url_noticia=url_noticia,
                             juego=juego,
-                            url_juego=url_juego)
+                            url_juego=url_juego,
+                            url_imagen=url_imagen)
     writer.commit()
 
 

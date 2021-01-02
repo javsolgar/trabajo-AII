@@ -32,7 +32,8 @@ def list_news(request):
             escritor = noticia['escritor']
             url_noticia = noticia['url_noticia']
             juego = noticia['juego']
-            res.append([titulo, escritor, url_noticia, juego])
+            url_imagen = noticia['url_imagen']
+            res.append([titulo, escritor, url_noticia, juego, url_imagen])
 
     ix.close()
     return render(request, 'news_game/list.html', {'noticias': res, 'cantidad': cantidad})
@@ -51,8 +52,9 @@ def list_filtrar_juego(request):
             escritor = noticia['escritor']
             url_noticia = noticia['url_noticia']
             juego = noticia['juego']
+            url_imagen = noticia['url_imagen']
 
-            res.append([titulo, escritor, url_noticia, juego])
+            res.append([titulo, escritor, url_noticia, juego, url_imagen])
 
     ix.close()
     return render(request, 'news_game/list.html', {'noticias': res, 'cantidad': len(res)})
