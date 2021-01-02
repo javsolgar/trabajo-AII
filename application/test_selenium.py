@@ -17,7 +17,7 @@ class TestApplication(LiveServerTestCase):
     def setUp(self):
         call_command('loaddata', 'initial_data.json', verbosity=0)
         options = webdriver.FirefoxOptions()
-        options.headless = True
+        options.headless = False
         self.driver = webdriver.Firefox(options=options)
         self.base_url = self.live_server_url
 
@@ -39,8 +39,8 @@ class TestApplication(LiveServerTestCase):
         driver.find_element_by_id("id_password").send_keys("admin")
         driver.find_element_by_xpath("//button[@type='submit']").click()
 
-        self.assertEqual("Opciones para admin:", driver.find_element_by_xpath("//b").text)
-        self.assertEqual("Opciones de administrador", driver.find_element_by_xpath("//li[4]/b").text)
+        self.assertEqual("Opciones para admin:", driver.find_element_by_xpath("//li[4]/b").text)
+        self.assertEqual("Opciones de administrador", driver.find_element_by_xpath("//li[3]/b").text)
         self.assertEqual(u"Cerrar sesión", driver.find_element_by_link_text(u"Cerrar sesión").text)
 
         driver.find_element_by_link_text(u"Cerrar sesión").click()
@@ -87,12 +87,12 @@ class TestApplication(LiveServerTestCase):
         driver.find_element_by_id("id_password2").send_keys("987456321A")
         driver.find_element_by_xpath("//button[@type='submit']").click()
         self.assertEqual("Inicio", driver.find_element_by_xpath("//h1").text)
-        self.assertEqual("Opciones para test_registro:", driver.find_element_by_xpath("//b").text)
+        self.assertEqual("Opciones para test_registro:", driver.find_element_by_xpath("//li[3]/b").text)
         self.assertEqual(u"Cerrar sesión", driver.find_element_by_link_text(u"Cerrar sesión").text)
 
         driver.get(self.base_url+'/registro/')
         self.assertEqual("Inicio", driver.find_element_by_xpath("//h1").text)
-        self.assertEqual("Opciones para test_registro:", driver.find_element_by_xpath("//b").text)
+        self.assertEqual("Opciones para test_registro:", driver.find_element_by_xpath("//li[3]/b").text)
         self.assertEqual(u"Cerrar sesión", driver.find_element_by_link_text(u"Cerrar sesión").text)
 
         driver.find_element_by_link_text(u"Cerrar sesión").click()
