@@ -14,6 +14,12 @@
     <br>
 
     {% for noticia in noticias %}
+
+        <tr>
+            {% if noticia.4 != '-' %}
+            <td><img src="{{ noticia.4 }}" style="width: 55vw; min-width: 330px;"></td>
+            {% endif %}
+        <td>
         <h3><a href="{{ noticia.2 }}">{{ noticia.0 }}</a></h3>
         <ul>
             <li>Escritor: {{ noticia.1 }}</li>
@@ -24,6 +30,8 @@
             {% endif %}
 
         </ul>
+        </td>
+        </tr>
         <hr>
     {% endfor %}
 {% endblock %}

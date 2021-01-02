@@ -23,21 +23,6 @@
     {% endfor %}
      <button type="submit">Enviar</button>
   </form>
-    <!--<div class='uk-animation-slide-bottom'>
-        <form method="post" class ='uk-form' id="formulario" action='/registro/'>
-            <fieldset>
-                <legend>Formulario de registro de usuario</legend>
-                <p>Correo eletrónico: <input class='uk-form' type="email" name="email" id='id_email' placeholder="Correo electrónico"/></p>
-                <p>Nombre de usuario: <input class='uk-form' type="text" name="username" id='id_username' placeholder="Nombre de usuario"/></p>
-                <p>Contraseña: <input class='uk-form' type="password" name="password" id='id_password' placeholder="Nombre de usuario"/></p>
-                <p>Confirmación de la contraseña: <input class='uk-form' type="password" name="password2" id='id_password2' placeholder="Nombre de usuario"/></p>
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Sign up">
-            </fieldset>
-        </form>
-    </div>-->
-
     <script>
     var password = document.getElementById("id_password")
   , confirm_password = document.getElementById("id_password2");

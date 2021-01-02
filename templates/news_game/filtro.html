@@ -1,0 +1,22 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>Filtro de noticias</title>
+{% endblock %}
+
+{% block encabezado %}
+    <h1>Filtro de noticias de noticias</h1>
+
+{% endblock %}
+
+{% block contenido %}
+    <h4>Seleccione un juego para filtrar:</h4>
+    <form method="get" action="/news/filtrado/">
+    <select name="juego">
+    {% for juego in juegos %}
+        <option value="{{ juego }}"> {{ juego }}</option>
+    {% endfor %}
+    </select>
+        <input id="filter" class="btn-default" type="submit" value="Filtrar">
+    </form>
+{% endblock %}
