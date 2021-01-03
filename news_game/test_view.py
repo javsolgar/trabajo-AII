@@ -52,7 +52,7 @@ class PostProcTestCase(APITestCase):
 
         elemento = randrange(len(lista_juegos))
         self.assertNotEqual(lista_juegos[elemento], '')
-        
+
         response2 = self.client.get('/news/filtrado/', {'juego': lista_juegos[elemento]})
         self.assertEqual(response2.status_code, 200)
 

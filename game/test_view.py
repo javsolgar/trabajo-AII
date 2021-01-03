@@ -1,4 +1,5 @@
-from django.contrib.auth.models import User
+import re
+import string
 from whoosh.index import open_dir
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
@@ -65,3 +66,53 @@ class PostProcTestCase(APITestCase):
 
         lista_juegos = response2.context['juegos']
         self.assertNotEqual(len(lista_juegos), 0)
+
+    def test_filtrado_por_busqueda_titulo(self):
+        response = self.client.get('/games/filtro/buscar/')
+        self.assertEqual(response.status_code, 200)
+
+        response2 = self.client.get('/games/')
+        self.assertEqual(response2.status_code, 200)
+
+        lista_juegos = response2.context['juegos']
+        self.assertNotEqual(len(lista_juegos), 0)
+
+        elemento = randrange(len(lista_juegos))
+        self.assertNotEqual(lista_juegos[elemento], 0)
+
+        titulo = lista_juegos[elemento][1]
+        self.assertNotEqual(len(titulo), 0)
+
+        palabras = titulo.split(' ')
+
+        palabra = ''
+
+        while palabra == '':
+            borrar = False
+            elemento2 = randrange(len(palabras))
+            elegida = palabras[elemento2]
+            for letra in elegida:
+                if letra not in string.ascii_letters:
+                    borrar = True
+                    break
+                palabra += letra
+            if palabra == 'The' or len(palabra) == 1:
+                borrar = True
+            if borrar:
+                palabra = ''
+
+        self.assertNotEqual(len(palabra), 0)
+
+        response3 = self.client.get('/games/filtrado/', {'select_filtro': palabra})
+        self.assertEqual(response3.status_code, 200)
+
+        lista_juegos_respuesta = response3.context['juegos']
+        self.assertNotEqual(len(lista_juegos_respuesta), 0)
+
+        contiene_la_palabra = True
+
+        for juego in lista_juegos_respuesta:
+            if not palabra in juego[1]:
+                contiene_la_palabra = False
+
+        self.assertEqual(contiene_la_palabra, True)

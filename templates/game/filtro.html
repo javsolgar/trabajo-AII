@@ -10,13 +10,19 @@
 {% endblock %}
 
 {% block contenido %}
+
+
     <h4>Filtrar juegos por {{ filtro }}:</h4>
     <form method="get" action="/games/filtrado/">
-    <select name="select_filtro">
-        {% for opcion in opciones %}
-            <option value = "{{ filtro }}_{{ opcion }}">{{ opcion }}</option>
-        {% endfor %}
-    </select>
+        <p>Título del juego : <input type="text" name="select_filtro"></p>
+    {% if  filtro == 'titulo' %}
+    {% else %}
+        <select name="select_filtro">
+            {% for opcion in opciones %}
+                <option value = "{{ filtro }}_{{ opcion }}">{{ opcion }}</option>
+            {% endfor %}
+        </select>
+    {% endif %}
         <input id="filter" class="btn-default" type="submit" value="Filtrar">
     </form>
 {% endblock %}

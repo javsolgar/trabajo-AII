@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.utils.decorators import method_decorator
 from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
 

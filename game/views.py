@@ -52,6 +52,10 @@ def show_game(request, game_title):
     return render(request, 'game/show.html', {'juego': res})
 
 
+def buscar_juegos_titulo(request):
+    return render(request, 'game/filtro.html', {'filtro': 'titulo'})
+
+
 def list_plataformas(request):
     res = []
     ix = open_dir(index_games)
@@ -68,6 +72,7 @@ def list_plataformas(request):
 
     ix.close()
     return render(request, 'game/filtro.html', {'opciones': sorted(res), 'filtro': 'plataformas'})
+
 
 def list_generos(request):
     res = []
@@ -87,11 +92,16 @@ def list_generos(request):
     return render(request, 'game/filtro.html', {'opciones': sorted(res), 'filtro': 'generos'})
 
 
-
 def list_games_filtrados(request):
     res = []
     ix = open_dir(index_games)
-    filtro, valor = request.GET.get('select_filtro').split('_')
+    respuesta_formulario = request.GET.get('select_filtro')
+
+    if '_' in respuesta_formulario:
+        filtro, valor = respuesta_formulario.split('_')
+    else:
+        filtro = 'titulo'
+        valor = respuesta_formulario
 
     with ix.searcher() as searcher:
         query = QueryParser(filtro, ix.schema).parse(valor)
