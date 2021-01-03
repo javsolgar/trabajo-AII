@@ -7,7 +7,7 @@ from whoosh.fields import Schema, TEXT, ID, KEYWORD
 
 def get_schema():
     return Schema(titulo=TEXT(stored=True),
-                  plataformas=KEYWORD(stored=True),
+                  plataformas=TEXT(stored=True),
                   desarrollador=ID(stored=True),
                   generos=KEYWORD(stored=True),
                   url_juego=ID(stored=True),
@@ -62,7 +62,6 @@ def almacena_juegos(soup_juegos, index_games):
 
             # Url_imagen
             url_imagen = soup.find('img', class_=['dib', 'mar_b10'])['src']
-
 
             # Plataformas
             enlaces_plataformas = enlace_titulo.find_next_sibling() \

@@ -1,0 +1,22 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>Filtro de juegos</title>
+{% endblock %}
+
+{% block encabezado %}
+    <h1>Filtro de juegos</h1>
+
+{% endblock %}
+
+{% block contenido %}
+    <h4>Filtrar juegos por {{ filtro }}:</h4>
+    <form method="get" action="/games/filtrado/">
+    <select name="select_filtro">
+        {% for opcion in opciones %}
+            <option value = "{{ filtro }}_{{ opcion }}">{{ opcion }}</option>
+        {% endfor %}
+    </select>
+        <input id="filter" class="btn-default" type="submit" value="Filtrar">
+    </form>
+{% endblock %}

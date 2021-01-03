@@ -43,7 +43,7 @@ def show_game(request, game_title):
         result = searcher.search(query)
         for juego in result:
             res = [juego['titulo'],
-                   juego['plataformas'],
+                   juego['plataformas'].replace(',', ', '),
                    juego['desarrollador'],
                    juego['generos'].replace(',', ', '),
                    juego['url_juego'],
@@ -52,3 +52,39 @@ def show_game(request, game_title):
 
     ix.close()
     return render(request, 'game/show.html', {'juego': res})
+
+
+def list_plataformas(request):
+    res = []
+    ix = open_dir(index_games)
+    with ix.searcher() as searcher:
+        juegos = searcher.documents()
+
+        for juego in juegos:
+            plataformas = juego['plataformas'].split(',')
+
+            for plataforma in plataformas:
+
+                if plataforma not in res:
+                    res.append(plataforma)
+
+    ix.close()
+    return render(request, 'game/filtro.html', {'opciones': res, 'filtro': 'plataformas'})
+
+
+def list_games_filtrados(request):
+    res = []
+    ix = open_dir(index_games)
+    filtro, valor = request.GET.get('select_filtro').split('_')
+
+    with ix.searcher() as searcher:
+        query = QueryParser(filtro, ix.schema).parse(valor)
+        juegos = searcher.search(query)
+        for juego in juegos:
+            url_imagen = juego['url_imagen']
+            titulo = juego['titulo']
+
+            res.append([url_imagen, titulo])
+
+    ix.close()
+    return render(request, 'game/list.html', {'juegos': res})

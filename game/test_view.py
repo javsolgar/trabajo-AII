@@ -32,7 +32,7 @@ class PostProcTestCase(APITestCase):
                 juego = noticia['juego']
                 break
         ix.close()
-        self.client.get('/games/'+juego+'/')
+        self.client.get('/games/' + juego + '/')
 
     def test_scrap_games(self):
         crea_index_games(index_games)
@@ -45,3 +45,20 @@ class PostProcTestCase(APITestCase):
             all_games = searcher.doc_count_all()
 
         self.assertNotEqual(all_games, 0)
+
+    def test_filtrado_por_generos(self):
+        response = self.client.get('/games/filtro/plataformas/')
+        self.assertEqual(response.status_code, 200)
+
+        filtro = response.context['filtro']
+        self.assertFalse(len(filtro) == 0)
+
+        lista_plataformas = response.context['opciones']
+        self.assertFalse(len(lista_plataformas) == 0)
+        self.assertFalse(len(lista_plataformas[0]) == 0)
+
+        response2 = self.client.get('/games/filtrado/', {'select_filtro': filtro + '_' + lista_plataformas[0]})
+        self.assertEqual(response2.status_code, 200)
+
+        lista_juegos = response2.context['juegos']
+        self.assertNotEqual(len(lista_juegos), 0)
