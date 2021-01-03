@@ -1,3 +1,4 @@
+from random import randrange
 from whoosh.index import open_dir
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
@@ -47,10 +48,12 @@ class PostProcTestCase(APITestCase):
 
         lista_juegos = response.context['juegos']
         self.assertNotEqual(len(lista_juegos), 0)
-        self.assertNotEqual(lista_juegos[0], '')
         self.assertNotEqual(lista_juegos, None)
 
-        response2 = self.client.get('/news/filtrado/', {'juego': lista_juegos[0]})
+        elemento = randrange(len(lista_juegos))
+        self.assertNotEqual(lista_juegos[elemento], '')
+
+        response2 = self.client.get('/news/filtrado/', {'juego': lista_juegos[elemento]})
         self.assertEqual(response2.status_code, 200)
 
         noticias = response2.context['noticias']
