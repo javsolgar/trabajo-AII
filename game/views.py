@@ -1,8 +1,6 @@
-from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render
 from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
-from django.contrib.auth.decorators import user_passes_test
 
 from application.decorators import is_admin
 from game.scrap_games import descarga_juegos
@@ -69,7 +67,25 @@ def list_plataformas(request):
                     res.append(plataforma)
 
     ix.close()
-    return render(request, 'game/filtro.html', {'opciones': res, 'filtro': 'plataformas'})
+    return render(request, 'game/filtro.html', {'opciones': sorted(res), 'filtro': 'plataformas'})
+
+def list_generos(request):
+    res = []
+    ix = open_dir(index_games)
+    with ix.searcher() as searcher:
+        juegos = searcher.documents()
+
+        for juego in juegos:
+            generos = juego['generos'].split(',')
+
+            for genero in generos:
+
+                if genero not in res:
+                    res.append(genero)
+
+    ix.close()
+    return render(request, 'game/filtro.html', {'opciones': sorted(res), 'filtro': 'generos'})
+
 
 
 def list_games_filtrados(request):

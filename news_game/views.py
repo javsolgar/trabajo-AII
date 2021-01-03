@@ -68,4 +68,4 @@ def list_games_names(request):
         for juego in juegos:
             res.append(juego['titulo'])
     ix.close()
-    return render(request, 'news_game/filtro.html', {'juegos': res})
+    return render(request, 'news_game/filtro.html', {'juegos': sorted(res)})

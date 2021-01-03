@@ -9,7 +9,7 @@ def get_schema():
     return Schema(titulo=TEXT(stored=True),
                   plataformas=TEXT(stored=True),
                   desarrollador=ID(stored=True),
-                  generos=KEYWORD(stored=True),
+                  generos=TEXT(stored=True),
                   url_juego=ID(stored=True),
                   jugadores=KEYWORD(stored=True),
                   url_imagen=ID(stored=True))

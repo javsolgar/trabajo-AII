@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User
 from whoosh.index import open_dir
 from rest_framework.test import APIClient
-from rest_framework.test import APITestCase, APIRequestFactory
+from rest_framework.test import APITestCase
 from game.scrap_games import crea_index_games, get_url_juegos, obten_juegos, almacena_juegos
+from random import randrange
 
 index_news = './indices/IndexNewsGames'
 index_games = './indices/IndexGames'
@@ -55,9 +56,11 @@ class PostProcTestCase(APITestCase):
 
         lista_plataformas = response.context['opciones']
         self.assertFalse(len(lista_plataformas) == 0)
-        self.assertFalse(len(lista_plataformas[0]) == 0)
 
-        response2 = self.client.get('/games/filtrado/', {'select_filtro': filtro + '_' + lista_plataformas[0]})
+        elemento = randrange(len(lista_plataformas))
+        self.assertFalse(len(lista_plataformas[elemento]) == 0)
+
+        response2 = self.client.get('/games/filtrado/', {'select_filtro': filtro + '_' + lista_plataformas[elemento]})
         self.assertEqual(response2.status_code, 200)
 
         lista_juegos = response2.context['juegos']
