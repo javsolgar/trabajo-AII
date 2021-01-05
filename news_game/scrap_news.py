@@ -30,7 +30,7 @@ def obten_info_noticias(urls_noticias):
 def extrae_url_noticias(soup_noticias):
     urls_noticias = []
     for soup in soup_noticias:
-        tipo = soup.find('span', class_=['upp', 'cpl_plat', 'b']).string.split(' ')
+        tipo = soup.find('span', class_=['upp', 'col_plat', 'b']).string.split(' ')
         if 'Noticia' in tipo:
             url_noticia = soup.find('a')['href']
             urls_noticias.append(url_noticia)

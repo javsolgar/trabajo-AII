@@ -10,7 +10,6 @@
 {% endblock %}
 
 {% block contenido %}
-<hr>
 
 
 <table class="table table-striped">
@@ -21,7 +20,7 @@
 
                 <tr>
                     <th>Título:</th>
-                    <td>{{ juego.0 }}</td>
+                    <td id="titulo">{{ juego.0 }}</td>
                 </tr>
                 <tr>
                     <th>Plataformas:</th>
@@ -42,7 +41,12 @@
                 </tr>
                 {% endif %}
                 <tr>
-                    <td></td><a class="btn" href="{{ juego.4 }}">Enlace original</a></tr>
+                    <th></th>
+                    <td><a class="btn" href="{{ juego.4 }}">Enlace original</a></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><a class="btn" href="/news/filtrado/?juego={{ juego.0 }}">Ver noticias de este juego</a></td>
                 </tr>
             </table>
         </td>

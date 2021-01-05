@@ -23,6 +23,7 @@ def list_games(request):
     ix = open_dir(index_games)
     res = []
     with ix.searcher() as searcher:
+        cantidad = searcher.doc_count()
         juegos = searcher.documents()
         for juego in juegos:
             url_imagen = juego['url_imagen']
@@ -31,7 +32,7 @@ def list_games(request):
             res.append([url_imagen, titulo])
 
     ix.close()
-    return render(request, 'game/list.html', {'juegos': res})
+    return render(request, 'game/list.html', {'juegos': res, 'cantidad':cantidad})
 
 
 def show_game(request, game_title):
