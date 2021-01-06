@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet">
 <head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+
+  	  {# Cargamos la librería #}
+	  {% load bootstrap4 %}
+	  {# CSS Bootstrap #}
+	  {% bootstrap_css %}
     <meta charset="UTF-8">
-    {% block titulo %}
-  {% endblock %}
+    {%   block titulo %}
+  {%     endblock %}
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Inicio</a>
+            </li>
+
+            <!-- NOTICIAS -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Noticias</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/news">Lista de noticias</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/news/filtro/">Filtrar noticias</a>
+                </div>
+            </li>
+
+
+            <!-- JUEGOS -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Juegos</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/games">Lista de juegos</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/games/filtro/buscar/">Buscar juego por título</a>
+                    <a class="dropdown-item" href="/games/filtro/plataformas/">Filtrar juegos por plataformas</a>
+                    <a class="dropdown-item" href="/games/filtro/generos/">Filtrar juegos por géneros</a>
+                </div>
+            </li>
+
+        {% if not user.is_authenticated %}
+                <!-- OPCIONES DE INICIO DE SESION/REGISTRO -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Acceder</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/accounts/login">Inicio de sesión</a>
+                        <a class="dropdown-item" href="/registro">Registrarse</a>
+                    </div>
+                </li>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+                <!-- OPCIONES DE USUARIO -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ user.get_username }}</a>
+                    <div class="dropdown-menu">
+                        {% if user.is_authenticated and user.is_staff %}
+                            <a class="dropdown-item" href="/scrap_news_games/">Refrescar noticias</a>
+                            <a class="dropdown-item" href="/scrap_games/">Refrescar juegos</a>
+                            <a class="dropdown-item" href="/scrap_all/">Refrescar toda la información de la web</a>
+                            <div class="dropdown-divider"></div>
+                        {% endif %}
+                        <a class="dropdown-item" href="/accounts/logout">Cerrar sesión</a>
+                    </div>
+                </li>
+        {% endif %}
+  </ul>
+</nav>
   {% block encabezado %}
   {% endblock %}
-<h1>Menú</h1>
-<ul>
-    <li><b>Noticias</b></li>
-    <ul>
-        <li><a href="/news">Lista de noticias</a></li>
-        <li><a href="/news/filtro/">Filtrar noticias</a></li>
-
-    </ul>
-
-    <li><b>Juegos</b></li>
-    <ul>
-        <li><a href="/games">Lista de juegos</a></li>
-        <li><a href="/games/filtro/buscar/">Buscar juego por título</a></li>
-        <li><a href="/games/filtro/plataformas/">Filtrar juegos por plataformas</a></li>
-        <li><a href="/games/filtro/generos/">Filtrar juegos por géneros</a></li>
-    </ul>
-
-    {% if user.is_authenticated and user.is_staff %}
-        <li><b>Opciones de administrador</b></li>
-        <ul>
-        <li><a href="/scrap_news_games/">Refrescar noticias</a></li>
-        <li><a href="/scrap_games/">Refrescar juegos</a></li>
-        <li><a href="/scrap_all/">Refrescar toda la información de la web</a></li>
-        </ul>
-    {% endif %}
-
-    {% if not user.is_authenticated %}
-        <li><b>Inicio de sesión:</b></li>
-        <ul>
-        <li><a href="/accounts/login">Iniciar sesión</a> / <a href="/registro">Registrarse</a></li>
-    {% endif %}
-
-    {% if  user.is_authenticated %}
-        <li><b>Opciones para {{ user.get_username }}:</b></li>
-        <ul>
-        <li><a href="/accounts/logout">Cerrar sesión</a></li>
-    {% endif %}
-    </ul>
 
 
-</ul><hr>
+
  {% block contenido %}
   {% endblock %}
+
+{% bootstrap_javascript jquery='full' %}
+<!-- JavaScript Colocado al final del documento para que las páginas se carguen más rápido -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

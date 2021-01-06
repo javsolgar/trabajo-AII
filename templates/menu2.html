@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block titulo %}
+  {% endblock %}
+</head>
+<body>
+  {% block encabezado %}
+  {% endblock %}
+<h1>Menú</h1>
+<ul>
+    <li><b>Noticias</b></li>
+    <ul>
+        <li><a href="/news">Lista de noticias</a></li>
+        <li><a href="/news/filtro/">Filtrar noticias</a></li>
+
+    </ul>
+
+    <li><b>Juegos</b></li>
+    <ul>
+        <li><a href="/games">Lista de juegos</a></li>
+        <li><a href="/games/filtro/buscar/">Buscar juego por título</a></li>
+        <li><a href="/games/filtro/plataformas/">Filtrar juegos por plataformas</a></li>
+        <li><a href="/games/filtro/generos/">Filtrar juegos por géneros</a></li>
+    </ul>
+
+    {% if user.is_authenticated and user.is_staff %}
+        <li><b>Opciones de administrador</b></li>
+        <ul>
+        <li><a href="/scrap_news_games/">Refrescar noticias</a></li>
+        <li><a href="/scrap_games/">Refrescar juegos</a></li>
+        <li><a href="/scrap_all/">Refrescar toda la información de la web</a></li>
+        </ul>
+    {% endif %}
+
+    {% if not user.is_authenticated %}
+        <li><b>Inicio de sesión:</b></li>
+        <ul>
+        <li><a href="/accounts/login">Iniciar sesión</a> / <a href="/registro">Registrarse</a></li>
+    {% endif %}
+
+    {% if  user.is_authenticated %}
+        <li><b>Opciones para {{ user.get_username }}:</b></li>
+        <ul>
+        <li><a href="/accounts/logout">Cerrar sesión</a></li>
+    {% endif %}
+    </ul>
+
+
+</ul><hr>
+ {% block contenido %}
+  {% endblock %}
+</body>
+</html>
