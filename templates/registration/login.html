@@ -10,10 +10,9 @@
 {% endblock %}
 
 {% block contenido %}
-<h2>Inicio de sesión</h2>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Log In</button>
+  <button type="btn btn-primary" class="btn btn-primary">Log In</button>
 </form>
 {% endblock %}
