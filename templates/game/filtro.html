@@ -5,24 +5,64 @@
 {% endblock %}
 
 {% block encabezado %}
-    <h1>Filtro de juegos</h1>
-
 {% endblock %}
 
 {% block contenido %}
 
+    <style>
+        #cover {
+            background-size: cover;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
 
-    <h4>Filtrar juegos por {{ filtro }}:</h4>
-    <form method="get" action="/games/filtrado/">
-        <p>Título del juego : <input type="text" name="select_filtro"></p>
-    {% if  filtro == 'titulo' %}
-    {% else %}
-        <select name="select_filtro">
-            {% for opcion in opciones %}
-                <option value = "{{ filtro }}_{{ opcion }}">{{ opcion }}</option>
-            {% endfor %}
-        </select>
-    {% endif %}
-        <input id="filter" class="btn-default" type="submit" value="Filtrar">
-    </form>
+        #cover-caption {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        form:before {
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: -1;
+            border-radius: 10px;
+        }
+    </style>
+
+
+    <section id="cover" class="min-vh-100">
+        <div id="cover-caption">
+            <div class="container">
+                <div class="row text-black">
+                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                        <form method="get" action="/games/filtrado/">
+                            <h4 class="display-5 py-3 text-truncate">Filtrar juegos por {{ filtro }}:</h4>
+                                <div class="px-2">
+                                    {% if  filtro == 'titulo' %}
+                                        <p>Título del juego : <input type="text" name="select_filtro"></p>
+                                    {% else %}
+                                        <select name="select_filtro">
+                                            {% for opcion in opciones %}
+                                                <option value = "{{ filtro }}_{{ opcion }}">{{ opcion }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    {% endif %}
+                                </div>
+                                <br>
+                            <input id="filter" class="btn-default" type="submit" value="Filtrar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
