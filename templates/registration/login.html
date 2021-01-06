@@ -5,14 +5,57 @@
 {% endblock %}
 
 {% block encabezado %}
-    <h1>Inicio de sesión</h1>
+
 
 {% endblock %}
 
 {% block contenido %}
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="btn btn-primary" class="btn btn-primary">Log In</button>
-</form>
+    <style>
+#cover {
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+    border-radius: 10px;
+}
+    </style>
+    <section id="cover" class="min-vh-100">
+        <div id="cover-caption">
+            <div class="container">
+                <div class="row text-black">
+                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                        <form method="post" class="justify-content-center">
+                            <div class="px-2">
+                                <h2 class="display-4 py-2 text-truncate">Inicio de sesión</h2>
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button type="btn btn-primary" class="btn btn-primary">Log In</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
 {% endblock %}
