@@ -5,51 +5,37 @@
 {% endblock %}
 
 {% block encabezado %}
-    <h1>Lista de juegos</h1>
-
 {% endblock %}
 
 {% block contenido %}
+<div class="container" style="margin-top:30px">
+
+    <div class="col-sm-9">
+      <h2>{{ juego.0 }}</h2>
+        <table>
+            <tr>
+                <td><div class="img-circle"><img src="{{ juego.6 }}"></div></td>
+                <br>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td>
+                    <p><b>Plataformas:</b> {{ juego.1 }}</p>
+                    <p><b>Desarrollador:</b> {{ juego.2 }}</p>
+                    <p><b>Generos:</b> {{ juego.2 }}</p>
+                    {% if juego.5 != '-' %}
+                        <p><b>Número de jugadores:</b> {{ juego.5 }}</p>
+                    {% endif %}
+                    <a class="btn btn-primary" href="{{ juego.4 }}">Enlace original</a>
+                    <a class="btn btn-primary" href="/news/filtrado/?juego={{ juego.0 }}">Ver noticias de este juego</a>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 
 
-<table class="table table-striped">
-    <td>
-      <td><img src="{{ juego.6 }}"></td>
-        <td>
-            <table class="table table-striped">
-
-                <tr>
-                    <th>Título:</th>
-                    <td id="titulo">{{ juego.0 }}</td>
-                </tr>
-                <tr>
-                    <th>Plataformas:</th>
-                    <td>{{ juego.1 }}</td>
-                </tr>
-                <tr>
-                    <th>Desarrollador:</th>
-                    <td>{{ juego.2 }}</td>
-                </tr>
-                <tr>
-                    <th>Generos:</th>
-                    <td>{{ juego.3 }}</td>
-                </tr>
-                {% if juego.5 != '-' %}
-                <tr>
-                    <th>Número de jugadores:</th>
-                    <td>{{ juego.5 }}</td>
-                </tr>
-                {% endif %}
-                <tr>
-                    <th></th>
-                    <td><a class="btn" href="{{ juego.4 }}">Enlace original</a></td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <td><a class="btn" href="/news/filtrado/?juego={{ juego.0 }}">Ver noticias de este juego</a></td>
-                </tr>
-            </table>
-        </td>
-    </td>
-</table>
 {% endblock %}

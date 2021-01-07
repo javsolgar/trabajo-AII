@@ -5,18 +5,58 @@
 {% endblock %}
 
 {% block encabezado %}
-    <h1>Filtro de noticias</h1>
-
 {% endblock %}
 
 {% block contenido %}
-    <h4>Seleccione un juego para filtrar:</h4>
-    <form method="get" action="/news/filtrado/">
-    <select name="juego">
-    {% for juego in juegos %}
-        <option value="{{ juego }}"> {{ juego }}</option>
-    {% endfor %}
-    </select>
-        <input id="filter" class="btn-default" type="submit" value="Filtrar">
-    </form>
+    <style>
+        #cover {
+            background-size: cover;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #cover-caption {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        form:before {
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: -1;
+            border-radius: 10px;
+        }
+    </style>
+
+    <section id="cover" class="min-vh-100">
+        <div id="cover-caption">
+            <div class="container">
+                <div class="row text-black">
+                    <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                        <form method="get" action="/news/filtrado/">
+                            <h4 class="display-5 py-3 text-truncate">Seleccione un juego para filtrar:</h4>
+                                <div class="px-2">
+                                    <select name="juego">
+                                        {% for juego in juegos %}
+                                            <option value="{{ juego }}"> {{ juego }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <br>
+                            <input id="filter"  class="btn btn-primary" type="submit" value="Filtrar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -5,24 +5,65 @@
 {% endblock %}
 
 {% block encabezado %}
-    <h1>Registro de usuario</h1>
-
 {% endblock %}
 
 {% block contenido %}
+        <style>
+        #cover {
+            background-size: cover;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
 
-    <h2>Registro de usuario</h2>
-    <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-        <p>{{ field.label_tag }} {{   field }}
-        {% for error in field.errors %}
-            <p style="color:red">{{ error }}</p>
-        {% endfor %}
-        </p>
-    {% endfor %}
-     <button type="submit">Enviar</button>
-  </form>
+        #cover-caption {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        form:before {
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.3);
+            z-index: -1;
+            border-radius: 10px;
+        }
+    </style>
+
+    <section id="cover" class="min-vh-100">
+            <div id="cover-caption">
+                <div class="container">
+                    <div class="row text-black">
+                        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                            <form method="post">
+                                <h4 class="display-5 py-3 text-truncate">Registro de usuario</h4>
+                                <div class="px-2">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                        <p class="sr-only>{{ field.label_tag }} {{   field }}
+                                            {% for error in field.errors %}
+                                                <p style="color:red">{{ error }}</p>
+                                            {% endfor %}
+                                        </p>
+                                {% endfor %}
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <script>
     var password = document.getElementById("id_password")
   , confirm_password = document.getElementById("id_password2");

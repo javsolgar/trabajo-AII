@@ -32,7 +32,7 @@ def list_games(request):
             res.append([url_imagen, titulo])
 
     ix.close()
-    return render(request, 'game/list.html', {'juegos': res, 'cantidad':cantidad})
+    return render(request, 'game/list.html', {'juegos': res, 'cantidad': cantidad})
 
 
 def show_game(request, game_title):
@@ -114,4 +114,4 @@ def list_games_filtrados(request):
             res.append([url_imagen, titulo])
 
     ix.close()
-    return render(request, 'game/list.html', {'juegos': res})
+    return render(request, 'game/list.html', {'juegos': res, 'cantidad': len(res)})
