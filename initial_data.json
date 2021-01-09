@@ -1,1 +1,1671 @@
-[{"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$216000$bogLncGNIMTn$uJPBw4kYYO4oRMcZYFm1RsNK6zIYmHF/QemlXGOILPo=", "last_login": "2020-12-28T18:21:03.663Z", "is_superuser": true, "username": "admin", "first_name": "", "last_name": "", "email": "admin@admin.com", "is_staff": true, "is_active": true, "date_joined": "2020-12-28T18:20:21.479Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=", "last_login": "2021-01-01T12:23:15.595Z", "is_superuser": false, "username": "prueba", "first_name": "", "last_name": "", "email": "", "is_staff": false, "is_active": true, "date_joined": "2021-01-01T12:23:14.805Z", "groups": [], "user_permissions": []}}]
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$bogLncGNIMTn$uJPBw4kYYO4oRMcZYFm1RsNK6zIYmHF/QemlXGOILPo=",
+    "last_login": "2021-01-09T20:39:41.046Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-12-28T18:20:21.479Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-01T12:23:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "n7krs42kxzu01195aix1pufzvhnlak9f",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSGDwQsp0_sM1sLuBicRlvypotw9QnKRtG9m3ltNeOxlOjZep5nUVRl1-d0S5ifXBuiB9b7ovNR9nZNuij7ppseF-HU73b-DgltpdeitQO-yw2gsUXSBQZJzYAkgeO5JQDrxARA6QpbIacAhGOszoKjPF-XlOFY:1kyL1R:vaWWJS_FwduKdGQBxsYjW-_K5URygYfTNi5HOXSee-A",
+    "expire_date": "2021-01-23T20:39:41.129Z"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 1,
+  "fields": {
+    "nombre": "PC"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 2,
+  "fields": {
+    "nombre": "PS4"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 3,
+  "fields": {
+    "nombre": "XOne"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 4,
+  "fields": {
+    "nombre": "PS5"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 5,
+  "fields": {
+    "nombre": "XSeries"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 6,
+  "fields": {
+    "nombre": "Mac"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 7,
+  "fields": {
+    "nombre": "Linux"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 8,
+  "fields": {
+    "nombre": "Switch"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 9,
+  "fields": {
+    "nombre": "PS3"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 10,
+  "fields": {
+    "nombre": "X360"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 11,
+  "fields": {
+    "nombre": "Android"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 12,
+  "fields": {
+    "nombre": "iOS"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 13,
+  "fields": {
+    "nombre": "Stadia"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 14,
+  "fields": {
+    "nombre": "DS"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 15,
+  "fields": {
+    "nombre": "PS1"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 16,
+  "fields": {
+    "nombre": "GBC"
+  }
+},
+{
+  "model": "game.plataforma",
+  "pk": 17,
+  "fields": {
+    "nombre": "Saturn"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 1,
+  "fields": {
+    "nombre": "Otros"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 2,
+  "fields": {
+    "nombre": "Party"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 3,
+  "fields": {
+    "nombre": "Acción"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 4,
+  "fields": {
+    "nombre": "Acción y aventura"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 5,
+  "fields": {
+    "nombre": "Survival horror"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 6,
+  "fields": {
+    "nombre": "Ciencia ficción"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 7,
+  "fields": {
+    "nombre": "Apocalíptico"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 8,
+  "fields": {
+    "nombre": "Monstruos"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 9,
+  "fields": {
+    "nombre": "Zombies"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 10,
+  "fields": {
+    "nombre": "Shooter"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 11,
+  "fields": {
+    "nombre": "Primera persona (FPS)"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 12,
+  "fields": {
+    "nombre": "Soldados y Fuerzas Especiales"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 13,
+  "fields": {
+    "nombre": "Paramilitares y mercenarios"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 14,
+  "fields": {
+    "nombre": "Bélico"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 15,
+  "fields": {
+    "nombre": "Supervivencia"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 16,
+  "fields": {
+    "nombre": "Dragones"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 17,
+  "fields": {
+    "nombre": "Fantasía"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 18,
+  "fields": {
+    "nombre": "Hardware"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 19,
+  "fields": {
+    "nombre": "Estrategia"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 20,
+  "fields": {
+    "nombre": "Gestión y temáticos"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 21,
+  "fields": {
+    "nombre": "Vida virtual"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 22,
+  "fields": {
+    "nombre": "Rol"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 23,
+  "fields": {
+    "nombre": "Acción RPG"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 24,
+  "fields": {
+    "nombre": "Lucha"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 25,
+  "fields": {
+    "nombre": "TV"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 26,
+  "fields": {
+    "nombre": "Dibujos Animados"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 27,
+  "fields": {
+    "nombre": "Superhéroes"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 28,
+  "fields": {
+    "nombre": "Guerra moderna"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 29,
+  "fields": {
+    "nombre": "Hack and Slash"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 30,
+  "fields": {
+    "nombre": "Misterio"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 31,
+  "fields": {
+    "nombre": "Superhéroes DC"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 32,
+  "fields": {
+    "nombre": "Detectives"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 33,
+  "fields": {
+    "nombre": "Beat'em up"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 34,
+  "fields": {
+    "nombre": "Humor"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 35,
+  "fields": {
+    "nombre": "Cómic"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 36,
+  "fields": {
+    "nombre": "Extraterrestres"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 37,
+  "fields": {
+    "nombre": "Espacial"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 38,
+  "fields": {
+    "nombre": "Cyberpunk"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 39,
+  "fields": {
+    "nombre": "MOBA"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 40,
+  "fields": {
+    "nombre": "Tiempo real"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 41,
+  "fields": {
+    "nombre": "Animales"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 42,
+  "fields": {
+    "nombre": "Cocodrilos"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 43,
+  "fields": {
+    "nombre": "Policíaco y Thriller"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 44,
+  "fields": {
+    "nombre": "Paranormal"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 45,
+  "fields": {
+    "nombre": "Combate por turnos"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 46,
+  "fields": {
+    "nombre": "Plataformas"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 47,
+  "fields": {
+    "nombre": "Deportes"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 48,
+  "fields": {
+    "nombre": "Fútbol"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 49,
+  "fields": {
+    "nombre": "Motor gráfico"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 50,
+  "fields": {
+    "nombre": "Sin cuotas"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 51,
+  "fields": {
+    "nombre": "Abstracto"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 52,
+  "fields": {
+    "nombre": "Moderno"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 53,
+  "fields": {
+    "nombre": "Ninjas"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 54,
+  "fields": {
+    "nombre": "Samurais"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 55,
+  "fields": {
+    "nombre": "Manga"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 56,
+  "fields": {
+    "nombre": "Mazmorras"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 57,
+  "fields": {
+    "nombre": "Acción táctica"
+  }
+},
+{
+  "model": "game.genero",
+  "pk": 58,
+  "fields": {
+    "nombre": "Espías"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 1,
+  "fields": {
+    "nombre": "Mediatonic"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 2,
+  "fields": {
+    "nombre": "Techland"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 3,
+  "fields": {
+    "nombre": "Treyarch"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 4,
+  "fields": {
+    "nombre": "Facepunch Studios"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 5,
+  "fields": {
+    "nombre": "Capcom"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 6,
+  "fields": {
+    "nombre": "Nintendo"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 7,
+  "fields": {
+    "nombre": "BioWare"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 8,
+  "fields": {
+    "nombre": "Valve"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 9,
+  "fields": {
+    "nombre": "Warner Bros. Games Montreal"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 10,
+  "fields": {
+    "nombre": "UbiSoft"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 11,
+  "fields": {
+    "nombre": "Innersloth"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 12,
+  "fields": {
+    "nombre": "CD Projekt RED"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 13,
+  "fields": {
+    "nombre": "Riot Games"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 14,
+  "fields": {
+    "nombre": "Remedy Entertainment"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 15,
+  "fields": {
+    "nombre": "Game Freak"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 16,
+  "fields": {
+    "nombre": "Insomniac Games"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 17,
+  "fields": {
+    "nombre": "EA Sports"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 18,
+  "fields": {
+    "nombre": "Epic Games"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 19,
+  "fields": {
+    "nombre": "Roblox Corporation"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 20,
+  "fields": {
+    "nombre": "Core Design"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 21,
+  "fields": {
+    "nombre": "SNK Playmore"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 22,
+  "fields": {
+    "nombre": "Grinding Gear Games"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 23,
+  "fields": {
+    "nombre": "Other Ocean Interactive"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 24,
+  "fields": {
+    "nombre": "Realmforge Studios"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 25,
+  "fields": {
+    "nombre": "Tencent"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 26,
+  "fields": {
+    "nombre": "Revelation Games"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 27,
+  "fields": {
+    "nombre": "IO Interactive"
+  }
+},
+{
+  "model": "game.desarrollador",
+  "pk": 28,
+  "fields": {
+    "nombre": "Microsoft"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 1,
+  "fields": {
+    "jugadores": "1-60"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 2,
+  "fields": {
+    "jugadores": "-"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 3,
+  "fields": {
+    "jugadores": "1-40"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 4,
+  "fields": {
+    "jugadores": "Masivo"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 5,
+  "fields": {
+    "jugadores": "1-4"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 6,
+  "fields": {
+    "jugadores": "1-8"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 7,
+  "fields": {
+    "jugadores": "1-64"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 8,
+  "fields": {
+    "jugadores": "1-2"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 9,
+  "fields": {
+    "jugadores": "1-10"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 10,
+  "fields": {
+    "jugadores": "1"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 11,
+  "fields": {
+    "jugadores": "Competitivo:"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 12,
+  "fields": {
+    "jugadores": "1-22"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 13,
+  "fields": {
+    "jugadores": "Multijugador"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 14,
+  "fields": {
+    "jugadores": "8"
+  }
+},
+{
+  "model": "game.jugadores",
+  "pk": 15,
+  "fields": {
+    "jugadores": "10"
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 1,
+  "fields": {
+    "titulo": "Fall Guys: Ultimate Knockout",
+    "url_juego": "https://www.3djuegos.com/34950/fall-guys-ultimate-knockout/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16724/fall_guys_ultimate_knockout/fotos/ficha/fall_guys_ultimate_knockout-4898516.jpg",
+    "jugadores": 1,
+    "desarrollador": 1,
+    "plataformas": [
+      1,
+      2
+    ],
+    "generos": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 2,
+  "fields": {
+    "titulo": "Dying Light 2",
+    "url_juego": "https://www.3djuegos.com/32521/dying-light-2/",
+    "url_imagen": "https://i.3djuegos.com/juegos/15947/dying_light_2/fotos/ficha/dying_light_2-4582700.jpg",
+    "jugadores": 2,
+    "desarrollador": 2,
+    "plataformas": [
+      1,
+      2,
+      3
+    ],
+    "generos": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 3,
+  "fields": {
+    "titulo": "Call of Duty Black Ops Cold War",
+    "url_juego": "https://www.3djuegos.com/36398/call-of-duty-black-ops-cold-war/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17202/call_of_duty__2020_/fotos/ficha/call_of_duty__2020_-5271095.jpg",
+    "jugadores": 3,
+    "desarrollador": 3,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "generos": [
+      3,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 4,
+  "fields": {
+    "titulo": "Rust",
+    "url_juego": "https://www.3djuegos.com/16729/rust/",
+    "url_imagen": "https://i.3djuegos.com/juegos/10077/rust/fotos/ficha/rust-2428721.jpg",
+    "jugadores": 4,
+    "desarrollador": 4,
+    "plataformas": [
+      1,
+      2,
+      3,
+      6,
+      7
+    ],
+    "generos": [
+      3,
+      7,
+      11,
+      13,
+      15
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 5,
+  "fields": {
+    "titulo": "Monster Hunter Rise",
+    "url_juego": "https://www.3djuegos.com/37598/monster-hunter-rise/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17548/fotos/ficha/-5264487.jpg",
+    "jugadores": 5,
+    "desarrollador": 5,
+    "plataformas": [
+      8
+    ],
+    "generos": [
+      3,
+      4,
+      8,
+      16,
+      17
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 6,
+  "fields": {
+    "titulo": "Nintendo Switch",
+    "url_juego": "https://www.3djuegos.com/22864/nintendo-switch/",
+    "url_imagen": "https://i.3djuegos.com/juegos/12232/nintendo_nx/fotos/ficha/nintendo_nx-3611162.jpg",
+    "jugadores": 2,
+    "desarrollador": 6,
+    "plataformas": [
+      8
+    ],
+    "generos": [
+      1,
+      18
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 7,
+  "fields": {
+    "titulo": "Animal Crossing: New Horizons",
+    "url_juego": "https://www.3djuegos.com/33252/animal-crossing-new-horizons/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16178/animal_crossing__switch_/fotos/ficha/animal_crossing__switch_-5049647.jpg",
+    "jugadores": 6,
+    "desarrollador": 6,
+    "plataformas": [
+      8
+    ],
+    "generos": [
+      17,
+      19,
+      20,
+      21
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 8,
+  "fields": {
+    "titulo": "Dragon Age 4 (Nombre Provisional)",
+    "url_juego": "https://www.3djuegos.com/29499/dragon-age-4-nombre-provisional/",
+    "url_imagen": "https://i.3djuegos.com/juegos/14904/dragon_age_4__nombre_provisional_/fotos/ficha/dragon_age_4__nombre_provisional_-5324893.jpg",
+    "jugadores": 2,
+    "desarrollador": 7,
+    "plataformas": [
+      1,
+      4,
+      5
+    ],
+    "generos": [
+      17,
+      22,
+      23
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 9,
+  "fields": {
+    "titulo": "Super Smash Bros. Ultimate",
+    "url_juego": "https://www.3djuegos.com/31614/super-smash-bros-ultimate/",
+    "url_imagen": "https://i.3djuegos.com/juegos/15649/super_smash_bros_switch/fotos/ficha/super_smash_bros_switch-4581614.jpg",
+    "jugadores": 6,
+    "desarrollador": 6,
+    "plataformas": [
+      8
+    ],
+    "generos": [
+      3,
+      24,
+      25,
+      26,
+      27
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 10,
+  "fields": {
+    "titulo": "CSGO",
+    "url_juego": "https://www.3djuegos.com/11953/counter-strike-global-offensive/",
+    "url_imagen": "https://i.3djuegos.com/juegos/7909/counterstrike_global_offensive/fotos/ficha/counterstrike_global_offensive-1942557.jpg",
+    "jugadores": 7,
+    "desarrollador": 8,
+    "plataformas": [
+      1,
+      6,
+      7,
+      9,
+      10
+    ],
+    "generos": [
+      3,
+      11,
+      13,
+      14,
+      28
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 11,
+  "fields": {
+    "titulo": "Devil May Cry 5",
+    "url_juego": "https://www.3djuegos.com/32358/devil-may-cry-5/",
+    "url_imagen": "https://i.3djuegos.com/juegos/7794/devil_may_cry_6/fotos/ficha/devil_may_cry_6-4596387.jpg",
+    "jugadores": 8,
+    "desarrollador": 5,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "generos": [
+      3,
+      4,
+      8,
+      17,
+      29
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 12,
+  "fields": {
+    "titulo": "Gotham Knights",
+    "url_juego": "https://www.3djuegos.com/35462/gotham-knights/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16893/batman__2019_/fotos/ficha/batman__2019_-5234062.jpg",
+    "jugadores": 8,
+    "desarrollador": 9,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "generos": [
+      3,
+      4,
+      27,
+      30,
+      31,
+      32
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 13,
+  "fields": {
+    "titulo": "Scott Pilgrim contra el Mundo",
+    "url_juego": "https://www.3djuegos.com/37569/scott-pilgrim-contra-el-mundo-el-videojuego-complete-edition/",
+    "url_imagen": "https://i.3djuegos.com/juegos/6183/scott_pilgrim_contra_el_mundo_el_videojuego/fotos/ficha/scott_pilgrim_contra_el_mundo_el_videojuego-5252381.jpg",
+    "jugadores": 5,
+    "desarrollador": 10,
+    "plataformas": [
+      1,
+      2,
+      3,
+      8,
+      9,
+      10
+    ],
+    "generos": [
+      3,
+      33,
+      34,
+      35
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 14,
+  "fields": {
+    "titulo": "Among Us",
+    "url_juego": "https://www.3djuegos.com/37505/among-us/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17520/fotos/ficha/-5245513.jpg",
+    "jugadores": 9,
+    "desarrollador": 11,
+    "plataformas": [
+      1,
+      3,
+      5,
+      8,
+      11,
+      12
+    ],
+    "generos": [
+      2,
+      3,
+      6,
+      36,
+      37
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 15,
+  "fields": {
+    "titulo": "Cyberpunk 2077",
+    "url_juego": "https://www.3djuegos.com/13924/cyberpunk-2077/",
+    "url_imagen": "https://i.3djuegos.com/juegos/8873/cyberpunk/fotos/ficha/cyberpunk-4889718.jpg",
+    "jugadores": 10,
+    "desarrollador": 12,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      13
+    ],
+    "generos": [
+      6,
+      22,
+      23,
+      38
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 16,
+  "fields": {
+    "titulo": "League of Legends",
+    "url_juego": "https://www.3djuegos.com/4563/league-of-legends/",
+    "url_imagen": "https://i.3djuegos.com/juegos/3472/league_of_legends_clash_of_fates/fotos/ficha/league_of_legends_clash_of_fates-2379781.jpg",
+    "jugadores": 11,
+    "desarrollador": 13,
+    "plataformas": [
+      1,
+      6
+    ],
+    "generos": [
+      17,
+      19,
+      39,
+      40,
+      41,
+      42
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 17,
+  "fields": {
+    "titulo": "Control",
+    "url_juego": "https://www.3djuegos.com/29293/control/",
+    "url_imagen": "https://i.3djuegos.com/juegos/14844/p7__remedy_/fotos/ficha/p7__remedy_-4583414.jpg",
+    "jugadores": 10,
+    "desarrollador": 14,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8
+    ],
+    "generos": [
+      3,
+      4,
+      6,
+      43,
+      44
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 18,
+  "fields": {
+    "titulo": "Pokémon Diamante",
+    "url_juego": "https://www.3djuegos.com/1773/pokemon-diamante/",
+    "url_imagen": "https://i.3djuegos.com/juegos/1777/pokemon_diamond__pearl/fotos/ficha/pokemon_diamond__pearl-1684347.jpg",
+    "jugadores": 2,
+    "desarrollador": 15,
+    "plataformas": [
+      14
+    ],
+    "generos": [
+      22,
+      27,
+      45
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 19,
+  "fields": {
+    "titulo": "Ratchet and Clank: Una Dimensión Aparte",
+    "url_juego": "https://www.3djuegos.com/36943/ratchet-and-clank-una-dimension-aparte/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17363/ratchet_and_clank_rift_apart/fotos/ficha/ratchet_and_clank_rift_apart-5179768.jpg",
+    "jugadores": 2,
+    "desarrollador": 16,
+    "plataformas": [
+      4
+    ],
+    "generos": [
+      3,
+      10,
+      26,
+      34,
+      46
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 20,
+  "fields": {
+    "titulo": "FIFA 21",
+    "url_juego": "https://www.3djuegos.com/37068/fifa-21/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17407/fifa_21/fotos/ficha/fifa_21-5213406.jpg",
+    "jugadores": 12,
+    "desarrollador": 17,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8
+    ],
+    "generos": [
+      47,
+      48
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 21,
+  "fields": {
+    "titulo": "Unreal Technology",
+    "url_juego": "https://www.3djuegos.com/14042/unreal-technology/",
+    "url_imagen": "https://i.3djuegos.com/juegos/7319/unreal_technology/fotos/ficha/unreal_technology-2226549.jpg",
+    "jugadores": 2,
+    "desarrollador": 18,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "generos": [
+      1,
+      49
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 22,
+  "fields": {
+    "titulo": "Roblox",
+    "url_juego": "https://www.3djuegos.com/31966/roblox/",
+    "url_imagen": "https://i.3djuegos.com/juegos/15772/roblox/fotos/ficha/roblox-4009040.jpg",
+    "jugadores": 13,
+    "desarrollador": 19,
+    "plataformas": [
+      1,
+      3,
+      6,
+      11,
+      12
+    ],
+    "generos": [
+      3,
+      4,
+      17,
+      50,
+      51
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 23,
+  "fields": {
+    "titulo": "Pokémon Espada / Pokémon Escudo",
+    "url_juego": "https://www.3djuegos.com/32385/pokemon-espada-pokemon-escudo/",
+    "url_imagen": "https://i.3djuegos.com/juegos/15904/pok_mon__2019_/fotos/ficha/pok_mon__2019_-4895752.jpg",
+    "jugadores": 5,
+    "desarrollador": 15,
+    "plataformas": [
+      8
+    ],
+    "generos": [
+      17,
+      22,
+      45
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 24,
+  "fields": {
+    "titulo": "Tomb Raider",
+    "url_juego": "https://www.3djuegos.com/7439/tomb-raider/",
+    "url_imagen": "https://i.3djuegos.com/juegos/5343/tomb_raider/fotos/ficha/tomb_raider-1698459.jpg",
+    "jugadores": 2,
+    "desarrollador": 20,
+    "plataformas": [
+      1,
+      11,
+      12,
+      15,
+      16,
+      17
+    ],
+    "generos": [
+      3,
+      4,
+      52
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 25,
+  "fields": {
+    "titulo": "Samurai Shodown",
+    "url_juego": "https://www.3djuegos.com/33228/samurai-shodown/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16165/samurai_spirits/fotos/ficha/samurai_spirits-4901690.jpg",
+    "jugadores": 8,
+    "desarrollador": 21,
+    "plataformas": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "generos": [
+      3,
+      24,
+      53,
+      54
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 26,
+  "fields": {
+    "titulo": "The King of Fighters 2002: Unlimited Match",
+    "url_juego": "https://www.3djuegos.com/21479/the-king-of-fighters-2002-unlimited-match/",
+    "url_imagen": "https://i.3djuegos.com/juegos/6695/the_king_of_fighters_2002_unlimited_match/fotos/ficha/the_king_of_fighters_2002_unlimited_match-2704647.jpg",
+    "jugadores": 2,
+    "desarrollador": 21,
+    "plataformas": [
+      1,
+      10
+    ],
+    "generos": [
+      3,
+      24,
+      55
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 27,
+  "fields": {
+    "titulo": "The King of Fighters XV",
+    "url_juego": "https://www.3djuegos.com/35164/the-king-of-fighters-xv/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16794/the_king_of_fighters_xv/fotos/ficha/the_king_of_fighters_xv-5338381.jpg",
+    "jugadores": 8,
+    "desarrollador": 21,
+    "plataformas": [
+      1,
+      2,
+      4
+    ],
+    "generos": [
+      3,
+      24,
+      55
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 28,
+  "fields": {
+    "titulo": "Path of Exile 2",
+    "url_juego": "https://www.3djuegos.com/35740/path-of-exile-2/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16986/fotos/ficha/-5019652.jpg",
+    "jugadores": 2,
+    "desarrollador": 22,
+    "plataformas": [
+      1
+    ],
+    "generos": [
+      17,
+      22,
+      23,
+      56
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 29,
+  "fields": {
+    "titulo": "Project Winter",
+    "url_juego": "https://www.3djuegos.com/33842/project-winter/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16377/fotos/ficha/-4874941.jpg",
+    "jugadores": 14,
+    "desarrollador": 23,
+    "plataformas": [
+      1,
+      2,
+      3,
+      8
+    ],
+    "generos": [
+      3,
+      15
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 30,
+  "fields": {
+    "titulo": "Spacebase Startopia",
+    "url_juego": "https://www.3djuegos.com/35255/spacebase-startopia/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16826/spacebase_startopia/fotos/ficha/spacebase_startopia-5338577.jpg",
+    "jugadores": 10,
+    "desarrollador": 24,
+    "plataformas": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "generos": [
+      19,
+      20
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 31,
+  "fields": {
+    "titulo": "Call of Duty: Mobile",
+    "url_juego": "https://www.3djuegos.com/34267/call-of-duty-mobile/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16515/call_of_duty_mobile/fotos/ficha/call_of_duty_mobile-4817932.jpg",
+    "jugadores": 15,
+    "desarrollador": 25,
+    "plataformas": [
+      11,
+      12
+    ],
+    "generos": [
+      3,
+      11,
+      14,
+      28
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 32,
+  "fields": {
+    "titulo": "Eden Remains: Arrival",
+    "url_juego": "https://www.3djuegos.com/38117/eden-remains-arrival/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17676/eden_remains_arrival/fotos/ficha/eden_remains_arrival-5338123.jpg",
+    "jugadores": 2,
+    "desarrollador": 26,
+    "plataformas": [
+      1
+    ],
+    "generos": [
+      3,
+      6,
+      15,
+      37
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 33,
+  "fields": {
+    "titulo": "The King of Fighters XIV",
+    "url_juego": "https://www.3djuegos.com/29366/the-king-of-fighters-xiv/",
+    "url_imagen": "https://i.3djuegos.com/juegos/12406/king_of_fighters_xiv/fotos/ficha/king_of_fighters_xiv-3716893.jpg",
+    "jugadores": 8,
+    "desarrollador": 21,
+    "plataformas": [
+      1,
+      2
+    ],
+    "generos": [
+      3,
+      24,
+      55
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 34,
+  "fields": {
+    "titulo": "Hitman 3",
+    "url_juego": "https://www.3djuegos.com/36950/hitman-3/",
+    "url_imagen": "https://i.3djuegos.com/juegos/17367/hitman_3/fotos/ficha/hitman_3-5178911.jpg",
+    "jugadores": 2,
+    "desarrollador": 27,
+    "plataformas": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      13
+    ],
+    "generos": [
+      3,
+      4,
+      57,
+      58
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 35,
+  "fields": {
+    "titulo": "Epic Games Store",
+    "url_juego": "https://www.3djuegos.com/33771/epic-games-store/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16348/epic_game_store/fotos/ficha/epic_game_store-4747314.jpg",
+    "jugadores": 2,
+    "desarrollador": 18,
+    "plataformas": [
+      1,
+      6
+    ],
+    "generos": [
+      1
+    ]
+  }
+},
+{
+  "model": "game.juego",
+  "pk": 36,
+  "fields": {
+    "titulo": "Xbox Series X",
+    "url_juego": "https://www.3djuegos.com/33377/xbox-series-x/",
+    "url_imagen": "https://i.3djuegos.com/juegos/16215/xbox_scarlett/fotos/ficha/xbox_scarlett-5039842.jpg",
+    "jugadores": 2,
+    "desarrollador": 28,
+    "plataformas": [
+      5
+    ],
+    "generos": [
+      1,
+      18
+    ]
+  }
+}
+]
