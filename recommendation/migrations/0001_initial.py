@@ -34,8 +34,8 @@ class Migration(migrations.Migration):
                 ('titulo', models.TextField()),
                 ('url_juego', models.URLField()),
                 ('url_imagen', models.URLField()),
-                ('desarrollador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recomendation.desarrollador')),
-                ('generos', models.ManyToManyField(to='recomendation.Genero')),
+                ('desarrollador', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recommendation.desarrollador')),
+                ('generos', models.ManyToManyField(to='recommendation.Genero')),
             ],
         ),
         migrations.CreateModel(
@@ -56,18 +56,18 @@ class Migration(migrations.Migration):
             name='Puntuacion',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('puntuaciones', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recomendation.juego')),
+                ('puntuaciones', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recommendation.juego')),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='application.perfil')),
             ],
         ),
         migrations.AddField(
             model_name='juego',
             name='jugadores',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recomendation.jugadores'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recommendation.jugadores'),
         ),
         migrations.AddField(
             model_name='juego',
             name='plataformas',
-            field=models.ManyToManyField(to='recomendation.Plataforma'),
+            field=models.ManyToManyField(to='recommendation.Plataforma'),
         ),
     ]

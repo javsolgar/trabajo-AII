@@ -5,7 +5,7 @@ from whoosh.index import open_dir
 
 from application.decorators import not_authenticated
 from application.decorators import is_admin
-from recomendation.models import Juego, Genero, Plataforma, Desarrollador, Jugadores
+from recommendation.models import Juego, Genero, Plataforma, Desarrollador, Jugadores
 from news_game.scrap_news import descarga_noticias
 from game.scrap_games import descarga_juegos
 

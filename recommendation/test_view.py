@@ -6,7 +6,7 @@ from django.core.management import call_command
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
-from recomendation.models import Juego
+from recommendation.models import Juego
 
 index_news = './indices/IndexNewsGames'
 index_games = './indices/IndexGames'
