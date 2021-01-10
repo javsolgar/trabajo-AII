@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from whoosh.index import open_dir
 
-from application.decorators import redirect_if_authenticated
+from application.decorators import not_authenticated
 from application.decorators import is_admin
 from recomendation.models import Juego, Genero, Plataforma, Desarrollador, Jugadores
 from news_game.scrap_news import descarga_noticias
@@ -17,7 +17,7 @@ def inicio(request):
     return render(request, 'application/inicio.html')
 
 
-@redirect_if_authenticated
+@not_authenticated
 def registro(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -53,7 +53,7 @@ def scrap_all(request):
 
     return render(request, 'admin/scrap_all.html', {'noticias': noticias, 'juegos': juegos})
 
-
+@is_admin
 def carga_juegos_bd(request):
 
     ix = open_dir(index_games)

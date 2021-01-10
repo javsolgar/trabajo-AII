@@ -1,7 +1,8 @@
 from django.urls import path
-from game import views
+from recomendation import views
 
 urlpatterns = [
+    path('list_juego_recommendation/', views.list_games)
 
 ]
 
