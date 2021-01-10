@@ -17,7 +17,7 @@ index_games = './indices/IndexGames'
 class PostProcTestCase(APITestCase):
 
     def setUp(self):
-        call_command('loaddata', 'initial_data.json', verbosity=0)
+        #call_command('loaddata', 'initial_data.json', verbosity=0)
         self.client = APIClient()
 
     def tearDown(self):
@@ -122,6 +122,3 @@ class PostProcTestCase(APITestCase):
 
         self.assertEqual(contiene_la_palabra, True)
 
-    def test_juegos_bd_not_empty(self):
-        cantidad = Juego.objects.count()
-        self.assertNotEqual(cantidad, 0)

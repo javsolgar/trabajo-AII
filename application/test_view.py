@@ -1,7 +1,6 @@
 import string
 import random
 
-from django.test.client import MULTIPART_CONTENT
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
