@@ -62,7 +62,7 @@
         {% endif %}
 
         {% if user.is_authenticated %}
-                <!-- OPCIONES DE USUARIO -->
+                <!-- OPCIONES DE ADMIN -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ user.get_username }}</a>
                     <div class="dropdown-menu">
@@ -70,6 +70,8 @@
                             <a class="dropdown-item" href="/scrap_news_games/">Refrescar noticias</a>
                             <a class="dropdown-item" href="/scrap_games/">Refrescar juegos</a>
                             <a class="dropdown-item" href="/scrap_all/">Refrescar toda la información de la web</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/cargar_juegos_bd/">Carga peliculas descargadas a sistema de recomendación</a>
                             <div class="dropdown-divider"></div>
                         {% endif %}
                         <a class="dropdown-item" href="/accounts/logout">Cerrar sesión</a>

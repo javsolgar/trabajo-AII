@@ -36,6 +36,7 @@ def list_games(request):
 
 
 def show_game(request, game_title):
+    res = []
     ix = open_dir(index_games)
     with ix.searcher() as searcher:
         query = QueryParser('titulo', ix.schema).parse(game_title)

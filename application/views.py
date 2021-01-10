@@ -5,6 +5,7 @@ from whoosh.index import open_dir
 
 from application.decorators import redirect_if_authenticated
 from application.decorators import is_admin
+from game.models import Juego, Genero, Plataforma, Desarrollador, Jugadores
 from news_game.scrap_news import descarga_noticias
 from game.scrap_games import descarga_juegos
 
@@ -51,3 +52,62 @@ def scrap_all(request):
         juegos = searcher.doc_count_all()
 
     return render(request, 'admin/scrap_all.html', {'noticias': noticias, 'juegos': juegos})
+
+
+def carga_juegos_bd(request):
+
+    ix = open_dir(index_games)
+    with ix.searcher() as searcher:
+        juegos = searcher.documents()
+        for juego in juegos:
+
+            # Crea generos
+            try:
+                generos = juego['generos'].split(',')
+                generos_objetos = []
+                for genero in generos:
+                    genero_objeto, creado = Genero.objects.get_or_create(nombre=genero)
+                    generos_objetos.append(genero_objeto)
+            except Exception as e:
+                print(e)
+
+            # Crea plataformas
+            try:
+                plataformas = juego['plataformas'].split(',')
+                plataformas_objetos = []
+                for plataforma in plataformas:
+                    plataforma_objeto, creado = Plataforma.objects.get_or_create(nombre=plataforma)
+                    plataformas_objetos.append(plataforma_objeto)
+            except Exception as e:
+                print(e)
+
+            # Crea desarrollador
+            try:
+                desarrollador, creado = Desarrollador.objects.get_or_create(nombre=juego['desarrollador'])
+            except Exception as e:
+                print(e)
+
+            # Crea jugadores
+            try:
+                jugadores_objeto, creado = Jugadores.objects.get_or_create(jugadores=juego['jugadores'])
+            except Exception as e:
+                print(e)
+
+            # Crea juego
+            try:
+                juego_objeto, creado = Juego.objects.get_or_create(titulo=juego['titulo'],
+                                                                   url_juego=juego['url_juego'],
+                                                                   url_imagen=juego['url_imagen'],
+                                                                   desarrollador=desarrollador,
+                                                                   jugadores=jugadores_objeto)
+                for genero_obj in generos_objetos:
+                    juego_objeto.generos.add(genero_obj)
+
+                for plataforma_obj in plataformas_objetos:
+                    juego_objeto.plataformas.add(plataforma_obj)
+
+                juego_objeto.save()
+            except Exception as e:
+                print(e)
+
+    return render(request, 'admin/guarda_db.html', {'cantidad': Juego.objects.count()})

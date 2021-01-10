@@ -39,8 +39,6 @@ def extrae_url_noticias(soup_noticias):
 
 def get_schema():
     return Schema(titulo=TEXT(stored=True),
-                  subtitulo=TEXT(stored=True),
-                  texto=TEXT(stored=True),
                   escritor=TEXT(stored=True),
                   url_noticia=ID(stored=True),
                   juego=TEXT(stored=True),
@@ -59,18 +57,6 @@ def almacena_noticias(soup_noticias, index):
     writer = ix.writer()
     for soup in soup_noticias:
         titulo = soup.find('h1').string.strip()
-        subtitulo = soup.find('p').string.strip()
-        parrafos = soup.find_all('p', class_=['s16', 'fftext', 'c2', 'lh27', 'img100'])[:-1]
-
-        try:
-            texto = parrafos[0].text
-            if len(parrafos) > 1:
-                for parrafo in parrafos[1:]:
-                    texto += '\n' + parrafo.text
-        except IndexError as e:
-            texto = '_'
-        except AttributeError as e:
-            texto = '_'
 
         try:
             escritor = soup.find('a', rel='author').string.strip()
@@ -94,8 +80,6 @@ def almacena_noticias(soup_noticias, index):
             url_imagen='-'
 
         writer.add_document(titulo=titulo,
-                            subtitulo=subtitulo,
-                            texto=texto,
                             escritor=escritor,
                             url_noticia=url_noticia,
                             juego=juego,
