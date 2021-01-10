@@ -2,13 +2,10 @@ import re
 import string
 
 from django.core.management import call_command
-from whoosh.index import open_dir
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
-from game.models import Juego
-from game.scrap_games import crea_index_games, get_url_juegos, obten_juegos, almacena_juegos
-from random import randrange
+from recomendation.models import Juego
 
 index_news = './indices/IndexNewsGames'
 index_games = './indices/IndexGames'
