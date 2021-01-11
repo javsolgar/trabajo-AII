@@ -1,7 +1,5 @@
-import re
-import string
+import random
 
-from django.contrib.auth.models import User
 from django.core.management import call_command
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
@@ -9,7 +7,7 @@ from rest_framework.test import APITestCase
 from recommendation.models import Juego
 
 index_news = './indices/IndexNewsGames'
-index_games = './indices/IndexGames'
+
 
 
 class PostProcTestCase(APITestCase):
@@ -26,14 +24,14 @@ class PostProcTestCase(APITestCase):
         self.assertNotEqual(cantidad, 0)
 
     def test_no_authenticado_no_accede_juegos_lista(self):
-        response = self.client.get('/list_juego_recommendation/')
+        response = self.client.get('/list_game_recommendation/')
         self.assertEqual(response.status_code, 302)
         self.assertTemplateUsed(template_name='inicio.html')
 
     def test_authenticado_accede_juegos_lista(self):
         self.client.login(username='prueba', password='963852741A')
 
-        response = self.client.get('/list_juego_recommendation/')
+        response = self.client.get('/list_game_recommendation/')
         self.assertEqual(response.status_code, 200)
 
         lista_juegos = response.context['juegos']
@@ -42,3 +40,36 @@ class PostProcTestCase(APITestCase):
         self.assertNotEqual(len(lista_juegos), 0)
         self.assertNotEqual(cantidad, 0)
         self.assertEqual(len(lista_juegos), cantidad)
+
+    def test_authenticado_no_accede_show_game(self):
+        response = self.client.get('/list_game_recommendation/')
+        self.assertEqual(response.status_code, 302)
+        self.assertTemplateUsed(template_name='inicio.html')
+
+    def test_list_y_show_game(self):
+        self.client.login(username='prueba', password='963852741A')
+        response = self.client.get('/list_game_recommendation/')
+        self.assertEqual(response.status_code, 200)
+
+        juegos = response.context['juegos']
+
+        selector = random.randrange(len(juegos))
+        juego_seleccionado = juegos[selector]
+
+        response2 = self.client.get('/game_recomendation/?id='+str(juego_seleccionado.id))
+        self.assertEqual(response2.status_code, 200)
+
+        juego = response2.context['juego']
+        self.assertIsNotNone(juego.titulo)
+        self.assertIsNotNone(juego.jugadores.jugadores)
+        self.assertIsNotNone(juego.desarrollador.nombre)
+        self.assertNotEqual(response2.context['generos'], '')
+        self.assertNotEqual(response2.context['plataformas'], '')
+        self.assertEqual(juego.id, juego_seleccionado.id)
+        self.assertIsNotNone(response2.context['noticias'])
+
+
+
+
+
+
