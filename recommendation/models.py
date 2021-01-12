@@ -29,5 +29,6 @@ class Juego(models.Model):
 
 
 class Puntuacion(models.Model):
-    usuario = models.ForeignKey(Perfil, on_delete=models.CASCADE)
-    puntuaciones = models.ForeignKey(Juego, on_delete=models.CASCADE)
+    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    juego = models.ForeignKey(Juego, on_delete=models.CASCADE)
+    valor = models.IntegerField(default=0)

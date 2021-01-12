@@ -1,13 +1,15 @@
 import random
 
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 from django.core.management import call_command
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
-from recommendation.models import Juego
+from application.models import Perfil
+from recommendation.models import Juego, Puntuacion
 
 index_news = './indices/IndexNewsGames'
-
 
 
 class PostProcTestCase(APITestCase):
@@ -56,7 +58,7 @@ class PostProcTestCase(APITestCase):
         selector = random.randrange(len(juegos))
         juego_seleccionado = juegos[selector]
 
-        response2 = self.client.get('/game_recomendation/?id='+str(juego_seleccionado.id))
+        response2 = self.client.get('/game_recomendation/?id=' + str(juego_seleccionado.id))
         self.assertEqual(response2.status_code, 200)
 
         juego = response2.context['juego']
@@ -68,8 +70,42 @@ class PostProcTestCase(APITestCase):
         self.assertEqual(juego.id, juego_seleccionado.id)
         self.assertIsNotNone(response2.context['noticias'])
 
+    def test_user_hace_puntuacion(self):
+        username = 'prueba'
+        password = '963852741A'
+        #email = 'prueba@prueba.com'
+        id = 8
+        valor1 = 5
+        valor2 = 4
+        valor3 = 0
 
+        usuario = authenticate(username=username, password=password)
+        perfil = Perfil.objects.get(usuario=usuario)
+        juego = Juego.objects.get(id=id)
 
+        self.assertEqual(Puntuacion.objects.filter(perfil=perfil, juego=juego).count(), 0)
+        self.client.login(username=username, password=password)
 
+        # Crea puntuacion
 
+        response = self.client.post('/game_recomendation/?id='+str(id), {'puntuacion': valor1})
+        self.assertEqual(response.status_code, 200)
+        self.assertNotEqual(Puntuacion.objects.filter(perfil=perfil, juego=juego).count(), 0)
 
+        puntuacion = Puntuacion.objects.get(perfil=perfil, juego=juego)
+        self.assertEqual(puntuacion.valor, valor1)
+
+        # Actualiza puntuacion
+
+        response2 = self.client.post('/game_recomendation/?id=' + str(id), {'puntuacion': valor2})
+        self.assertEqual(response2.status_code, 200)
+        self.assertNotEqual(Puntuacion.objects.filter(perfil=perfil, juego=juego).count(), 0)
+
+        puntuacion = Puntuacion.objects.get(perfil=perfil, juego=juego)
+        self.assertEqual(puntuacion.valor, valor2)
+
+        # Elimina puntuacion
+
+        response3 = self.client.post('/game_recomendation/?id=' + str(id), {'puntuacion': valor3})
+        self.assertEqual(response3.status_code, 200)
+        self.assertEqual(Puntuacion.objects.filter(perfil=perfil, juego=juego).count(), 0)

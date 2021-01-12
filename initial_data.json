@@ -25,7 +25,7 @@
     "username": "prueba",
     "first_name": "",
     "last_name": "",
-    "email": "",
+    "email": "prueba@prueba.com",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2021-01-01T12:23:14.805Z",
@@ -42,6 +42,22 @@
   }
 },
 {
+  "model": "application.perfil",
+  "pk": 1,
+  "fields": {
+    "usuario": 1,
+    "intereses": ""
+  }
+},
+{
+  "model": "application.perfil",
+  "pk": 2,
+  "fields": {
+    "usuario": 2,
+    "intereses": ""
+  }
+},
+  {
   "model": "recommendation.plataforma",
   "pk": 1,
   "fields": {
