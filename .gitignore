@@ -2,3 +2,6 @@
 db.sqlite3
 **/__pycache__
 *.log
+dataRS.dat.bak
+dataRS.dat.dat
+dataRS.dat.dir
