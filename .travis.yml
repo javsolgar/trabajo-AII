@@ -17,6 +17,10 @@ script:
   - cd trabajoAII
   - cp travis_local_settings.py local_settings.py
   - cd ..
+  - python ./manage.py makemigrations application
+  - python ./manage.py makemigrations game
+  - python ./manage.py makemigrations news_game
+  - python ./manage.py makemigrations recommendation
   - python ./manage.py migrate
   - python ./manage.py loaddata initial_data.json
   - python ./manage.py test
