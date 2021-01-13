@@ -99,3 +99,17 @@ def show_game(request):
                       'form': form
                   }
                   )
+
+
+@authenticated
+def get_ratings(request):
+    usuario = request.user
+    perfil = Perfil.objects.get(usuario=usuario)
+
+    cantidad = Puntuacion.objects.filter(perfil=perfil).count()
+    puntuaciones = []
+    if cantidad > 0:
+        puntuaciones = Puntuacion.objects.filter(perfil=perfil).all()
+
+    return render(request, 'recommendation/list_ratings.html',
+                  {'puntuaciones': puntuaciones, 'cantidad': cantidad})

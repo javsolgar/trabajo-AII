@@ -1,0 +1,48 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>{{ juego.titulo }}</title>
+{% endblock %}
+
+{% block encabezado %}
+{% endblock %}
+
+{% block contenido %}
+    {% if cantidad > 0 %}
+
+
+        <div class="container" style="margin-top:30px">
+            <h4>Ha puntuado un total de {{ cantidad }} juegos:</h4>
+            <br>
+            <div class="row row-cols-2 row-cols-md-4">
+                {% for puntuacion in puntuaciones %}
+                    <div class="col mb-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-transparent">
+                                <h3 class="card-title">{{ puntuacion.juego.titulo }}</h3>
+                            </div>
+                            <div class="card-body">
+                                <img class="card-img-top" src="{{ puntuacion.juego.url_imagen }}" alt="Card image">
+                            </div>
+                            <div class="card-footer">
+                                {% if puntuacion.valor == 1 %}<p>★</p>{% endif %}
+                                {% if puntuacion.valor == 2 %}<p>★★</p>{% endif %}
+                                {% if puntuacion.valor == 3 %}<p>★★★</p>{% endif %}
+                                {% if puntuacion.valor == 4 %}<p>★★★★</p>{% endif %}
+                                {% if puntuacion.valor == 5 %}<p>★★★★★</p>{% endif %}
+                                <a href="/game_recomendation/?id={{ puntuacion.juego.id }}" class="btn btn-primary">Ver información</a>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% else %}
+          <div class="container" style="margin-top:30px">
+              <h1>Aún no ha puntuado ningún juego.</h1>
+          </div>
+    {% endif %}
+
+{% endblock %}

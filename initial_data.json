@@ -1685,5 +1685,59 @@
       18
     ]
   }
+},
+  {
+  "model": "recommendation.puntuacion",
+  "pk": 2,
+  "fields": {
+    "perfil": 2,
+    "juego": 3,
+    "valor": 4
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 3,
+  "fields": {
+    "perfil": 2,
+    "juego": 10,
+    "valor": 5
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 4,
+  "fields": {
+    "perfil": 2,
+    "juego": 31,
+    "valor": 5
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 5,
+  "fields": {
+    "perfil": 2,
+    "juego": 4,
+    "valor": 3
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 6,
+  "fields": {
+    "perfil": 2,
+    "juego": 13,
+    "valor": 3
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 7,
+  "fields": {
+    "perfil": 2,
+    "juego": 15,
+    "valor": 1
+  }
 }
 ]

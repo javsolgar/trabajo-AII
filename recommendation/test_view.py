@@ -73,7 +73,6 @@ class PostProcTestCase(APITestCase):
     def test_user_hace_puntuacion(self):
         username = 'prueba'
         password = '963852741A'
-        #email = 'prueba@prueba.com'
         id = 8
         valor1 = 5
         valor2 = 4
@@ -109,3 +108,15 @@ class PostProcTestCase(APITestCase):
         response3 = self.client.post('/game_recomendation/?id=' + str(id), {'puntuacion': valor3})
         self.assertEqual(response3.status_code, 200)
         self.assertEqual(Puntuacion.objects.filter(perfil=perfil, juego=juego).count(), 0)
+
+    def test_list_puntuaciones_user(self):
+        username = 'prueba'
+        password = '963852741A'
+        
+        self.client.login(username=username, password=password)
+        response = self.client.get('/get_my_recomendations/')
+        self.assertEqual(response.status_code, 200)
+
+        puntuaciones = response.context['puntuaciones']
+        self.assertEqual(len(puntuaciones), 6)
+
