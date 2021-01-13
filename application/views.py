@@ -1,3 +1,5 @@
+import shelve
+
 from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
@@ -5,9 +7,10 @@ from whoosh.index import open_dir
 
 from application.decorators import not_authenticated
 from application.decorators import is_admin
-from recommendation.models import Juego, Genero, Plataforma, Desarrollador, Jugadores
+from recommendation.models import Juego, Genero, Plataforma, Desarrollador, Jugadores, Puntuacion
 from news_game.scrap_news import descarga_noticias
 from game.scrap_games import descarga_juegos
+from recommendation.recommendations import transformPrefs
 
 index_news = './indices/IndexNewsGames'
 index_games = './indices/IndexGames'
@@ -111,3 +114,20 @@ def carga_juegos_bd(request):
                 print(e)
 
     return render(request, 'admin/guarda_db.html', {'cantidad': Juego.objects.count()})
+
+
+@is_admin
+def carga_rs(request):
+    Prefs = {}  # matriz de usuarios y puntuaciones a cada a items
+    shelf = shelve.open("dataRS.dat")
+    puntuaciones = Puntuacion.objects.all()
+    for puntuacion in puntuaciones:
+        perfil = int(puntuacion.perfil.id)
+        juego_id = int(puntuacion.juego.id)
+        valor = float(puntuacion.valor)
+        Prefs.setdefault(perfil, {})
+        Prefs[perfil][juego_id] = valor
+    shelf['Prefs'] = Prefs
+    shelf['ItemsPrefs'] = transformPrefs(Prefs)
+    shelf.close()
+    return render(request, 'admin/carga_RS.html')

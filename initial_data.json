@@ -35,6 +35,60 @@
     "user_permissions": []
   }
 },
+  {
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba2",
+    "first_name": "",
+    "last_name": "",
+    "email": "prueba2@prueba.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-13T12:23:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+  {
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba3",
+    "first_name": "",
+    "last_name": "",
+    "email": "prueba3@prueba.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-13T13:23:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+    {
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba4",
+    "first_name": "",
+    "last_name": "",
+    "email": "prueba4@prueba.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-13T13:53:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
 {
   "model": "sessions.session",
   "pk": "n7krs42kxzu01195aix1pufzvhnlak9f",
@@ -56,6 +110,30 @@
   "pk": 2,
   "fields": {
     "usuario": 2,
+    "intereses": ""
+  }
+},
+  {
+  "model": "application.perfil",
+  "pk": 3,
+  "fields": {
+    "usuario": 3,
+    "intereses": ""
+  }
+},
+  {
+  "model": "application.perfil",
+  "pk": 4,
+  "fields": {
+    "usuario": 4,
+    "intereses": ""
+  }
+},
+    {
+  "model": "application.perfil",
+  "pk": 5,
+  "fields": {
+    "usuario": 5,
     "intereses": ""
   }
 },
@@ -1739,5 +1817,750 @@
     "juego": 15,
     "valor": 1
   }
-}
+},
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 8,
+      "fields": {
+        "perfil": 3,
+        "juego": 17,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 9,
+      "fields": {
+        "perfil": 3,
+        "juego": 7,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 10,
+      "fields": {
+        "perfil": 3,
+        "juego": 30,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 11,
+      "fields": {
+        "perfil": 3,
+        "juego": 27,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 12,
+      "fields": {
+        "perfil": 3,
+        "juego": 10,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 13,
+      "fields": {
+        "perfil": 3,
+        "juego": 23,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 14,
+      "fields": {
+        "perfil": 3,
+        "juego": 19,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 15,
+      "fields": {
+        "perfil": 3,
+        "juego": 36,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 16,
+      "fields": {
+        "perfil": 3,
+        "juego": 28,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 17,
+      "fields": {
+        "perfil": 3,
+        "juego": 32,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 18,
+      "fields": {
+        "perfil": 3,
+        "juego": 25,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 19,
+      "fields": {
+        "perfil": 3,
+        "juego": 4,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 20,
+      "fields": {
+        "perfil": 3,
+        "juego": 5,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 21,
+      "fields": {
+        "perfil": 3,
+        "juego": 31,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 22,
+      "fields": {
+        "perfil": 3,
+        "juego": 14,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 23,
+      "fields": {
+        "perfil": 3,
+        "juego": 15,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 24,
+      "fields": {
+        "perfil": 3,
+        "juego": 3,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 25,
+      "fields": {
+        "perfil": 3,
+        "juego": 12,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 26,
+      "fields": {
+        "perfil": 3,
+        "juego": 16,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 27,
+      "fields": {
+        "perfil": 3,
+        "juego": 8,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 28,
+      "fields": {
+        "perfil": 3,
+        "juego": 34,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 29,
+      "fields": {
+        "perfil": 3,
+        "juego": 6,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 30,
+      "fields": {
+        "perfil": 3,
+        "juego": 13,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 31,
+      "fields": {
+        "perfil": 3,
+        "juego": 9,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 32,
+      "fields": {
+        "perfil": 3,
+        "juego": 1,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 33,
+      "fields": {
+        "perfil": 3,
+        "juego": 29,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 34,
+      "fields": {
+        "perfil": 3,
+        "juego": 2,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 35,
+      "fields": {
+        "perfil": 3,
+        "juego": 35,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 36,
+      "fields": {
+        "perfil": 3,
+        "juego": 18,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 37,
+      "fields": {
+        "perfil": 3,
+        "juego": 33,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 38,
+      "fields": {
+        "perfil": 3,
+        "juego": 24,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 39,
+      "fields": {
+        "perfil": 3,
+        "juego": 11,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 40,
+      "fields": {
+        "perfil": 3,
+        "juego": 22,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 41,
+      "fields": {
+        "perfil": 3,
+        "juego": 21,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 42,
+      "fields": {
+        "perfil": 3,
+        "juego": 26,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 43,
+      "fields": {
+        "perfil": 3,
+        "juego": 20,
+        "valor": 5
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 44,
+      "fields": {
+        "perfil": 4,
+        "juego": 7,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 45,
+      "fields": {
+        "perfil": 4,
+        "juego": 3,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 46,
+      "fields": {
+        "perfil": 4,
+        "juego": 19,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 47,
+      "fields": {
+        "perfil": 4,
+        "juego": 12,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 48,
+      "fields": {
+        "perfil": 4,
+        "juego": 11,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 49,
+      "fields": {
+        "perfil": 4,
+        "juego": 23,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 50,
+      "fields": {
+        "perfil": 4,
+        "juego": 6,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 51,
+      "fields": {
+        "perfil": 4,
+        "juego": 4,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 52,
+      "fields": {
+        "perfil": 4,
+        "juego": 5,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 53,
+      "fields": {
+        "perfil": 4,
+        "juego": 28,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 54,
+      "fields": {
+        "perfil": 4,
+        "juego": 22,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 55,
+      "fields": {
+        "perfil": 4,
+        "juego": 36,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 56,
+      "fields": {
+        "perfil": 4,
+        "juego": 10,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 57,
+      "fields": {
+        "perfil": 4,
+        "juego": 21,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 58,
+      "fields": {
+        "perfil": 4,
+        "juego": 18,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 59,
+      "fields": {
+        "perfil": 4,
+        "juego": 26,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 60,
+      "fields": {
+        "perfil": 4,
+        "juego": 30,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 61,
+      "fields": {
+        "perfil": 4,
+        "juego": 13,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 62,
+      "fields": {
+        "perfil": 4,
+        "juego": 2,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 63,
+      "fields": {
+        "perfil": 4,
+        "juego": 14,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 64,
+      "fields": {
+        "perfil": 4,
+        "juego": 15,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 65,
+      "fields": {
+        "perfil": 4,
+        "juego": 25,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 66,
+      "fields": {
+        "perfil": 4,
+        "juego": 9,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 67,
+      "fields": {
+        "perfil": 4,
+        "juego": 8,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 68,
+      "fields": {
+        "perfil": 4,
+        "juego": 17,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 69,
+      "fields": {
+        "perfil": 4,
+        "juego": 35,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 70,
+      "fields": {
+        "perfil": 4,
+        "juego": 16,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 71,
+      "fields": {
+        "perfil": 4,
+        "juego": 20,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 72,
+      "fields": {
+        "perfil": 4,
+        "juego": 32,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 73,
+      "fields": {
+        "perfil": 4,
+        "juego": 34,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 74,
+      "fields": {
+        "perfil": 4,
+        "juego": 24,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 75,
+      "fields": {
+        "perfil": 4,
+        "juego": 27,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 76,
+      "fields": {
+        "perfil": 4,
+        "juego": 1,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 77,
+      "fields": {
+        "perfil": 4,
+        "juego": 31,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 78,
+      "fields": {
+        "perfil": 4,
+        "juego": 29,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 79,
+      "fields": {
+        "perfil": 4,
+        "juego": 33,
+        "valor": 2
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 79,
+      "fields": {
+        "perfil": 4,
+        "juego": 33,
+        "valor": 2
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 80,
+      "fields": {
+        "perfil": 5,
+        "juego": 23,
+        "valor": 5
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 81,
+      "fields": {
+        "perfil": 5,
+        "juego": 18,
+        "valor": 5
+        }
+    }
 ]

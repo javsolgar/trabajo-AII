@@ -1,11 +1,15 @@
-from django.shortcuts import render
+import shelve
+
+from django.shortcuts import render, get_object_or_404
 
 from application.models import Perfil
-from recommendation.form import FormularioPuntuaciones
+from recommendation.form import FormularioPuntuaciones, FormularioJuegos
 from application.decorators import authenticated
 from recommendation.models import Juego, Puntuacion
 from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
+
+from recommendation.recommendations import topMatches
 
 index_news = './indices/IndexNewsGames'
 index_games = './indices/IndexGames'
@@ -113,3 +117,26 @@ def get_ratings(request):
 
     return render(request, 'recommendation/list_ratings.html',
                   {'puntuaciones': puntuaciones, 'cantidad': cantidad})
+
+@authenticated
+def recomend_4_similars_games(request):
+    form = FormularioJuegos()
+    return render(request, 'recommendation/search_game_name.html', {'form': form})
+
+
+@authenticated
+def get_4_similars_games(request):
+    form = FormularioJuegos(request.GET, request.FILES)
+    if form.is_valid():
+        id_juego = form.cleaned_data.get('juego_id')
+        juego = get_object_or_404(Juego, pk=id_juego)
+        shelf = shelve.open("dataRS.dat")
+        ItemsPrefs = shelf['ItemsPrefs']
+        shelf.close()
+        recomendaciones = topMatches(ItemsPrefs, int(id_juego), n=4)
+        juegos = []
+        for recomendacion in recomendaciones:
+            juegos.append(Juego.objects.get(pk=recomendacion[1]))
+        return render(request, 'recommendation/juegos_similares.html', {'original': juego, 'juegos': juegos})
+    else:
+        return render(request, 'recommendation/juegos_similares.html')

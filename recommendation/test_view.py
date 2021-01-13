@@ -1,12 +1,12 @@
 import random
 
 from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
 from django.core.management import call_command
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
 from application.models import Perfil
+from recommendation.form import FormularioJuegos
 from recommendation.models import Juego, Puntuacion
 
 index_news = './indices/IndexNewsGames'
@@ -20,6 +20,10 @@ class PostProcTestCase(APITestCase):
 
     def tearDown(self):
         self.client = None
+
+    def inicializa_RS(self):
+        self.client.login(username='admin', password='admin')
+        self.client.get('/load_RS/')
 
     def test_juegos_bd_not_empty(self):
         cantidad = Juego.objects.count()
@@ -87,7 +91,7 @@ class PostProcTestCase(APITestCase):
 
         # Crea puntuacion
 
-        response = self.client.post('/game_recomendation/?id='+str(id), {'puntuacion': valor1})
+        response = self.client.post('/game_recomendation/?id=' + str(id), {'puntuacion': valor1})
         self.assertEqual(response.status_code, 200)
         self.assertNotEqual(Puntuacion.objects.filter(perfil=perfil, juego=juego).count(), 0)
 
@@ -112,7 +116,7 @@ class PostProcTestCase(APITestCase):
     def test_list_puntuaciones_user(self):
         username = 'prueba'
         password = '963852741A'
-        
+
         self.client.login(username=username, password=password)
         response = self.client.get('/get_my_recomendations/')
         self.assertEqual(response.status_code, 200)
@@ -120,3 +124,20 @@ class PostProcTestCase(APITestCase):
         puntuaciones = response.context['puntuaciones']
         self.assertEqual(len(puntuaciones), 6)
 
+    def test_recomienda_4_juegos(self):
+
+        self.inicializa_RS()
+
+        username = 'prueba'
+        password = '963852741A'
+        id_juego = random.randrange(1, 37)
+        self.client.login(username=username, password=password)
+
+        response = self.client.get('/recommend_4_similar_games/')
+        self.assertEqual(response.status_code, 200)
+
+        response2 = self.client.get('/get_4_games/', {'juego_id':str(id_juego)})
+        self.assertEqual(response2.status_code, 200)
+
+        juegos = response2.context['juegos']
+        self.assertEqual(len(juegos), 4)
