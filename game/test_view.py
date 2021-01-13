@@ -96,7 +96,7 @@ class PostProcTestCase(APITestCase):
                     borrar = True
                     break
                 palabra += letra
-            if palabra == 'The' or len(palabra) == 1:
+            if palabra == 'The' or len(palabra) <= 3:
                 borrar = True
             if borrar:
                 palabra = ''
@@ -106,8 +106,12 @@ class PostProcTestCase(APITestCase):
         response3 = self.client.get('/games/filtrado/', {'select_filtro': palabra})
         self.assertEqual(response3.status_code, 200)
 
-        lista_juegos_respuesta = response3.context['juegos']
-        self.assertNotEqual(len(lista_juegos_respuesta), 0)
+        try:
+            lista_juegos_respuesta = response3.context['juegos']
+            self.assertNotEqual(len(lista_juegos_respuesta), 0)
+        except AssertionError as e:
+            print('palabra busqueda:', palabra)
+            raise e
 
         contiene_la_palabra = True
 
