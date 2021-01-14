@@ -1,12 +1,8 @@
-import re
 import string
-
-from django.core.management import call_command
 from whoosh.index import open_dir
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
-from game.models import Juego
 from game.scrap_games import crea_index_games, get_url_juegos, obten_juegos, almacena_juegos
 from random import randrange
 
@@ -17,7 +13,6 @@ index_games = './indices/IndexGames'
 class PostProcTestCase(APITestCase):
 
     def setUp(self):
-        call_command('loaddata', 'initial_data.json', verbosity=0)
         self.client = APIClient()
 
     def tearDown(self):
@@ -101,7 +96,7 @@ class PostProcTestCase(APITestCase):
                     borrar = True
                     break
                 palabra += letra
-            if palabra == 'The' or len(palabra) == 1:
+            if palabra == 'The' or len(palabra) <= 3:
                 borrar = True
             if borrar:
                 palabra = ''
@@ -111,8 +106,12 @@ class PostProcTestCase(APITestCase):
         response3 = self.client.get('/games/filtrado/', {'select_filtro': palabra})
         self.assertEqual(response3.status_code, 200)
 
-        lista_juegos_respuesta = response3.context['juegos']
-        self.assertNotEqual(len(lista_juegos_respuesta), 0)
+        try:
+            lista_juegos_respuesta = response3.context['juegos']
+            self.assertNotEqual(len(lista_juegos_respuesta), 0)
+        except AssertionError as e:
+            print('palabra busqueda:', palabra)
+            raise e
 
         contiene_la_palabra = True
 
@@ -122,6 +121,3 @@ class PostProcTestCase(APITestCase):
 
         self.assertEqual(contiene_la_palabra, True)
 
-    def test_juegos_bd_not_empty(self):
-        cantidad = Juego.objects.count()
-        self.assertNotEqual(cantidad, 0)

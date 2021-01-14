@@ -1,0 +1,32 @@
+{%  extends 'menu.html' %}
+
+{% block titulo %}
+    <title>Lista de juegos</title>
+{% endblock %}
+
+{% block encabezado %}
+{% endblock %}
+
+{% block contenido %}
+    <div class="container" style="margin-top:30px">
+        <h4>Tenemos un total de {{ cantidad }} juegos registrados:</h4>
+        <br>
+        <div class="row row-cols-2 row-cols-md-4">
+            {% for juego in juegos %}
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-transparent">
+                            <h3 class="card-title">{{ juego.titulo }}</h3>
+                        </div>
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{ juego.url_imagen }}" alt="Card image">
+                        </div>
+                        <div class="card-footer">
+                            <a href="/game_recomendation/?id={{ juego.id }}" class="btn btn-primary">Ver información</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

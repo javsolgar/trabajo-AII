@@ -121,6 +121,7 @@ MODULES = [
     'application',
     'news_game',
     'game',
+    'recommendation'
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES

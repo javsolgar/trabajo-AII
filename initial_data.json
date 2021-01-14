@@ -1,6 +1,7 @@
 [
 {
   "model": "auth.user",
+  "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$bogLncGNIMTn$uJPBw4kYYO4oRMcZYFm1RsNK6zIYmHF/QemlXGOILPo=",
     "last_login": "2021-01-09T20:39:41.046Z",
@@ -18,6 +19,7 @@
 },
 {
   "model": "auth.user",
+  "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
     "last_login": "2021-01-01T12:23:15.595Z",
@@ -25,10 +27,64 @@
     "username": "prueba",
     "first_name": "",
     "last_name": "",
-    "email": "",
+    "email": "prueba@prueba.com",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2021-01-01T12:23:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+  {
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba2",
+    "first_name": "",
+    "last_name": "",
+    "email": "prueba2@prueba.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-13T12:23:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+  {
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba3",
+    "first_name": "",
+    "last_name": "",
+    "email": "prueba3@prueba.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-13T13:23:14.805Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+    {
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$2iHIsCr41NNV$480Y1gnw4O2DdtsTuSaEPQJZC30XDCS7x9BBmh47Vts=",
+    "last_login": "2021-01-01T12:23:15.595Z",
+    "is_superuser": false,
+    "username": "prueba4",
+    "first_name": "",
+    "last_name": "",
+    "email": "prueba4@prueba.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-01-13T13:53:14.805Z",
     "groups": [],
     "user_permissions": []
   }
@@ -42,833 +98,873 @@
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "application.perfil",
+  "pk": 1,
+  "fields": {
+    "usuario": 1,
+    "intereses": ""
+  }
+},
+{
+  "model": "application.perfil",
+  "pk": 2,
+  "fields": {
+    "usuario": 2,
+    "intereses": ""
+  }
+},
+  {
+  "model": "application.perfil",
+  "pk": 3,
+  "fields": {
+    "usuario": 3,
+    "intereses": ""
+  }
+},
+  {
+  "model": "application.perfil",
+  "pk": 4,
+  "fields": {
+    "usuario": 4,
+    "intereses": ""
+  }
+},
+    {
+  "model": "application.perfil",
+  "pk": 5,
+  "fields": {
+    "usuario": 5,
+    "intereses": ""
+  }
+},
+  {
+  "model": "recommendation.plataforma",
   "pk": 1,
   "fields": {
     "nombre": "PC"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 2,
   "fields": {
     "nombre": "PS4"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 3,
   "fields": {
     "nombre": "XOne"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 4,
   "fields": {
     "nombre": "PS5"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 5,
   "fields": {
     "nombre": "XSeries"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 6,
   "fields": {
     "nombre": "Mac"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 7,
   "fields": {
     "nombre": "Linux"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 8,
   "fields": {
     "nombre": "Switch"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 9,
   "fields": {
     "nombre": "PS3"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 10,
   "fields": {
     "nombre": "X360"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 11,
   "fields": {
     "nombre": "Android"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 12,
   "fields": {
     "nombre": "iOS"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 13,
   "fields": {
     "nombre": "Stadia"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 14,
   "fields": {
     "nombre": "DS"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 15,
   "fields": {
     "nombre": "PS1"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 16,
   "fields": {
     "nombre": "GBC"
   }
 },
 {
-  "model": "game.plataforma",
+  "model": "recommendation.plataforma",
   "pk": 17,
   "fields": {
     "nombre": "Saturn"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 1,
   "fields": {
     "nombre": "Otros"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 2,
   "fields": {
     "nombre": "Party"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 3,
   "fields": {
     "nombre": "Acción"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 4,
   "fields": {
     "nombre": "Acción y aventura"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 5,
   "fields": {
     "nombre": "Survival horror"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 6,
   "fields": {
     "nombre": "Ciencia ficción"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 7,
   "fields": {
     "nombre": "Apocalíptico"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 8,
   "fields": {
     "nombre": "Monstruos"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 9,
   "fields": {
     "nombre": "Zombies"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 10,
   "fields": {
     "nombre": "Shooter"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 11,
   "fields": {
     "nombre": "Primera persona (FPS)"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 12,
   "fields": {
     "nombre": "Soldados y Fuerzas Especiales"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 13,
   "fields": {
     "nombre": "Paramilitares y mercenarios"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 14,
   "fields": {
     "nombre": "Bélico"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 15,
   "fields": {
     "nombre": "Supervivencia"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 16,
   "fields": {
     "nombre": "Dragones"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 17,
   "fields": {
     "nombre": "Fantasía"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 18,
   "fields": {
     "nombre": "Hardware"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 19,
   "fields": {
     "nombre": "Estrategia"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 20,
   "fields": {
     "nombre": "Gestión y temáticos"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 21,
   "fields": {
     "nombre": "Vida virtual"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 22,
   "fields": {
     "nombre": "Rol"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 23,
   "fields": {
     "nombre": "Acción RPG"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 24,
   "fields": {
     "nombre": "Lucha"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 25,
   "fields": {
     "nombre": "TV"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 26,
   "fields": {
     "nombre": "Dibujos Animados"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 27,
   "fields": {
     "nombre": "Superhéroes"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 28,
   "fields": {
     "nombre": "Guerra moderna"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 29,
   "fields": {
     "nombre": "Hack and Slash"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 30,
   "fields": {
     "nombre": "Misterio"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 31,
   "fields": {
     "nombre": "Superhéroes DC"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 32,
   "fields": {
     "nombre": "Detectives"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 33,
   "fields": {
     "nombre": "Beat'em up"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 34,
   "fields": {
     "nombre": "Humor"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 35,
   "fields": {
     "nombre": "Cómic"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 36,
   "fields": {
     "nombre": "Extraterrestres"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 37,
   "fields": {
     "nombre": "Espacial"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 38,
   "fields": {
     "nombre": "Cyberpunk"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 39,
   "fields": {
     "nombre": "MOBA"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 40,
   "fields": {
     "nombre": "Tiempo real"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 41,
   "fields": {
     "nombre": "Animales"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 42,
   "fields": {
     "nombre": "Cocodrilos"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 43,
   "fields": {
     "nombre": "Policíaco y Thriller"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 44,
   "fields": {
     "nombre": "Paranormal"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 45,
   "fields": {
     "nombre": "Combate por turnos"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 46,
   "fields": {
     "nombre": "Plataformas"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 47,
   "fields": {
     "nombre": "Deportes"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 48,
   "fields": {
     "nombre": "Fútbol"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 49,
   "fields": {
     "nombre": "Motor gráfico"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 50,
   "fields": {
     "nombre": "Sin cuotas"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 51,
   "fields": {
     "nombre": "Abstracto"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 52,
   "fields": {
     "nombre": "Moderno"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 53,
   "fields": {
     "nombre": "Ninjas"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 54,
   "fields": {
     "nombre": "Samurais"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 55,
   "fields": {
     "nombre": "Manga"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 56,
   "fields": {
     "nombre": "Mazmorras"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 57,
   "fields": {
     "nombre": "Acción táctica"
   }
 },
 {
-  "model": "game.genero",
+  "model": "recommendation.genero",
   "pk": 58,
   "fields": {
     "nombre": "Espías"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 1,
   "fields": {
     "nombre": "Mediatonic"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 2,
   "fields": {
     "nombre": "Techland"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 3,
   "fields": {
     "nombre": "Treyarch"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 4,
   "fields": {
     "nombre": "Facepunch Studios"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 5,
   "fields": {
     "nombre": "Capcom"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 6,
   "fields": {
     "nombre": "Nintendo"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 7,
   "fields": {
     "nombre": "BioWare"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 8,
   "fields": {
     "nombre": "Valve"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 9,
   "fields": {
     "nombre": "Warner Bros. Games Montreal"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 10,
   "fields": {
     "nombre": "UbiSoft"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 11,
   "fields": {
     "nombre": "Innersloth"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 12,
   "fields": {
     "nombre": "CD Projekt RED"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 13,
   "fields": {
     "nombre": "Riot Games"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 14,
   "fields": {
     "nombre": "Remedy Entertainment"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 15,
   "fields": {
     "nombre": "Game Freak"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 16,
   "fields": {
     "nombre": "Insomniac Games"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 17,
   "fields": {
     "nombre": "EA Sports"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 18,
   "fields": {
     "nombre": "Epic Games"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 19,
   "fields": {
     "nombre": "Roblox Corporation"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 20,
   "fields": {
     "nombre": "Core Design"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 21,
   "fields": {
     "nombre": "SNK Playmore"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 22,
   "fields": {
     "nombre": "Grinding Gear Games"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 23,
   "fields": {
     "nombre": "Other Ocean Interactive"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 24,
   "fields": {
     "nombre": "Realmforge Studios"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 25,
   "fields": {
     "nombre": "Tencent"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 26,
   "fields": {
     "nombre": "Revelation Games"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 27,
   "fields": {
     "nombre": "IO Interactive"
   }
 },
 {
-  "model": "game.desarrollador",
+  "model": "recommendation.desarrollador",
   "pk": 28,
   "fields": {
     "nombre": "Microsoft"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 1,
   "fields": {
     "jugadores": "1-60"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 2,
   "fields": {
     "jugadores": "-"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 3,
   "fields": {
     "jugadores": "1-40"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 4,
   "fields": {
     "jugadores": "Masivo"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 5,
   "fields": {
     "jugadores": "1-4"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 6,
   "fields": {
     "jugadores": "1-8"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 7,
   "fields": {
     "jugadores": "1-64"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 8,
   "fields": {
     "jugadores": "1-2"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 9,
   "fields": {
     "jugadores": "1-10"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 10,
   "fields": {
     "jugadores": "1"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 11,
   "fields": {
     "jugadores": "Competitivo:"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 12,
   "fields": {
     "jugadores": "1-22"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 13,
   "fields": {
     "jugadores": "Multijugador"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 14,
   "fields": {
     "jugadores": "8"
   }
 },
 {
-  "model": "game.jugadores",
+  "model": "recommendation.jugadores",
   "pk": 15,
   "fields": {
     "jugadores": "10"
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 1,
   "fields": {
     "titulo": "Fall Guys: Ultimate Knockout",
@@ -887,7 +983,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 2,
   "fields": {
     "titulo": "Dying Light 2",
@@ -912,7 +1008,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 3,
   "fields": {
     "titulo": "Call of Duty Black Ops Cold War",
@@ -938,7 +1034,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 4,
   "fields": {
     "titulo": "Rust",
@@ -963,7 +1059,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 5,
   "fields": {
     "titulo": "Monster Hunter Rise",
@@ -984,7 +1080,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 6,
   "fields": {
     "titulo": "Nintendo Switch",
@@ -1002,7 +1098,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 7,
   "fields": {
     "titulo": "Animal Crossing: New Horizons",
@@ -1022,7 +1118,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 8,
   "fields": {
     "titulo": "Dragon Age 4 (Nombre Provisional)",
@@ -1043,7 +1139,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 9,
   "fields": {
     "titulo": "Super Smash Bros. Ultimate",
@@ -1064,7 +1160,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 10,
   "fields": {
     "titulo": "CSGO",
@@ -1089,7 +1185,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 11,
   "fields": {
     "titulo": "Devil May Cry 5",
@@ -1114,7 +1210,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 12,
   "fields": {
     "titulo": "Gotham Knights",
@@ -1140,7 +1236,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 13,
   "fields": {
     "titulo": "Scott Pilgrim contra el Mundo",
@@ -1165,7 +1261,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 14,
   "fields": {
     "titulo": "Among Us",
@@ -1191,7 +1287,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 15,
   "fields": {
     "titulo": "Cyberpunk 2077",
@@ -1216,7 +1312,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 16,
   "fields": {
     "titulo": "League of Legends",
@@ -1239,7 +1335,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 17,
   "fields": {
     "titulo": "Control",
@@ -1265,7 +1361,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 18,
   "fields": {
     "titulo": "Pokémon Diamante",
@@ -1284,7 +1380,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 19,
   "fields": {
     "titulo": "Ratchet and Clank: Una Dimensión Aparte",
@@ -1305,7 +1401,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 20,
   "fields": {
     "titulo": "FIFA 21",
@@ -1328,7 +1424,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 21,
   "fields": {
     "titulo": "Unreal Technology",
@@ -1350,7 +1446,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 22,
   "fields": {
     "titulo": "Roblox",
@@ -1375,7 +1471,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 23,
   "fields": {
     "titulo": "Pokémon Espada / Pokémon Escudo",
@@ -1394,7 +1490,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 24,
   "fields": {
     "titulo": "Tomb Raider",
@@ -1418,7 +1514,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 25,
   "fields": {
     "titulo": "Samurai Shodown",
@@ -1442,7 +1538,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 26,
   "fields": {
     "titulo": "The King of Fighters 2002: Unlimited Match",
@@ -1462,7 +1558,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 27,
   "fields": {
     "titulo": "The King of Fighters XV",
@@ -1483,7 +1579,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 28,
   "fields": {
     "titulo": "Path of Exile 2",
@@ -1503,7 +1599,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 29,
   "fields": {
     "titulo": "Project Winter",
@@ -1524,7 +1620,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 30,
   "fields": {
     "titulo": "Spacebase Startopia",
@@ -1546,7 +1642,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 31,
   "fields": {
     "titulo": "Call of Duty: Mobile",
@@ -1567,7 +1663,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 32,
   "fields": {
     "titulo": "Eden Remains: Arrival",
@@ -1587,7 +1683,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 33,
   "fields": {
     "titulo": "The King of Fighters XIV",
@@ -1607,7 +1703,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 34,
   "fields": {
     "titulo": "Hitman 3",
@@ -1633,7 +1729,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 35,
   "fields": {
     "titulo": "Epic Games Store",
@@ -1651,7 +1747,7 @@
   }
 },
 {
-  "model": "game.juego",
+  "model": "recommendation.juego",
   "pk": 36,
   "fields": {
     "titulo": "Xbox Series X",
@@ -1667,5 +1763,804 @@
       18
     ]
   }
-}
+},
+  {
+  "model": "recommendation.puntuacion",
+  "pk": 2,
+  "fields": {
+    "perfil": 2,
+    "juego": 3,
+    "valor": 4
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 3,
+  "fields": {
+    "perfil": 2,
+    "juego": 10,
+    "valor": 5
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 4,
+  "fields": {
+    "perfil": 2,
+    "juego": 31,
+    "valor": 5
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 5,
+  "fields": {
+    "perfil": 2,
+    "juego": 4,
+    "valor": 3
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 6,
+  "fields": {
+    "perfil": 2,
+    "juego": 13,
+    "valor": 3
+  }
+},
+{
+  "model": "recommendation.puntuacion",
+  "pk": 7,
+  "fields": {
+    "perfil": 2,
+    "juego": 15,
+    "valor": 1
+  }
+},
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 8,
+      "fields": {
+        "perfil": 3,
+        "juego": 17,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 9,
+      "fields": {
+        "perfil": 3,
+        "juego": 7,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 10,
+      "fields": {
+        "perfil": 3,
+        "juego": 30,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 11,
+      "fields": {
+        "perfil": 3,
+        "juego": 27,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 12,
+      "fields": {
+        "perfil": 3,
+        "juego": 10,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 13,
+      "fields": {
+        "perfil": 3,
+        "juego": 23,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 14,
+      "fields": {
+        "perfil": 3,
+        "juego": 19,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 15,
+      "fields": {
+        "perfil": 3,
+        "juego": 36,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 16,
+      "fields": {
+        "perfil": 3,
+        "juego": 28,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 17,
+      "fields": {
+        "perfil": 3,
+        "juego": 32,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 18,
+      "fields": {
+        "perfil": 3,
+        "juego": 25,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 19,
+      "fields": {
+        "perfil": 3,
+        "juego": 4,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 20,
+      "fields": {
+        "perfil": 3,
+        "juego": 5,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 21,
+      "fields": {
+        "perfil": 3,
+        "juego": 31,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 22,
+      "fields": {
+        "perfil": 3,
+        "juego": 14,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 23,
+      "fields": {
+        "perfil": 3,
+        "juego": 15,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 24,
+      "fields": {
+        "perfil": 3,
+        "juego": 3,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 25,
+      "fields": {
+        "perfil": 3,
+        "juego": 12,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 26,
+      "fields": {
+        "perfil": 3,
+        "juego": 16,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 27,
+      "fields": {
+        "perfil": 3,
+        "juego": 8,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 28,
+      "fields": {
+        "perfil": 3,
+        "juego": 34,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 29,
+      "fields": {
+        "perfil": 3,
+        "juego": 6,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 30,
+      "fields": {
+        "perfil": 3,
+        "juego": 13,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 31,
+      "fields": {
+        "perfil": 3,
+        "juego": 9,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 32,
+      "fields": {
+        "perfil": 3,
+        "juego": 1,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 33,
+      "fields": {
+        "perfil": 3,
+        "juego": 29,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 34,
+      "fields": {
+        "perfil": 3,
+        "juego": 2,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 35,
+      "fields": {
+        "perfil": 3,
+        "juego": 35,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 36,
+      "fields": {
+        "perfil": 3,
+        "juego": 18,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 37,
+      "fields": {
+        "perfil": 3,
+        "juego": 33,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 38,
+      "fields": {
+        "perfil": 3,
+        "juego": 24,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 39,
+      "fields": {
+        "perfil": 3,
+        "juego": 11,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 40,
+      "fields": {
+        "perfil": 3,
+        "juego": 22,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 41,
+      "fields": {
+        "perfil": 3,
+        "juego": 21,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 42,
+      "fields": {
+        "perfil": 3,
+        "juego": 26,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 43,
+      "fields": {
+        "perfil": 3,
+        "juego": 20,
+        "valor": 5
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 44,
+      "fields": {
+        "perfil": 4,
+        "juego": 7,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 45,
+      "fields": {
+        "perfil": 4,
+        "juego": 3,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 46,
+      "fields": {
+        "perfil": 4,
+        "juego": 19,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 47,
+      "fields": {
+        "perfil": 4,
+        "juego": 12,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 48,
+      "fields": {
+        "perfil": 4,
+        "juego": 11,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 49,
+      "fields": {
+        "perfil": 4,
+        "juego": 23,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 50,
+      "fields": {
+        "perfil": 4,
+        "juego": 6,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 51,
+      "fields": {
+        "perfil": 4,
+        "juego": 4,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 52,
+      "fields": {
+        "perfil": 4,
+        "juego": 5,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 53,
+      "fields": {
+        "perfil": 4,
+        "juego": 28,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 54,
+      "fields": {
+        "perfil": 4,
+        "juego": 22,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 55,
+      "fields": {
+        "perfil": 4,
+        "juego": 36,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 56,
+      "fields": {
+        "perfil": 4,
+        "juego": 10,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 57,
+      "fields": {
+        "perfil": 4,
+        "juego": 21,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 58,
+      "fields": {
+        "perfil": 4,
+        "juego": 18,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 59,
+      "fields": {
+        "perfil": 4,
+        "juego": 26,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 60,
+      "fields": {
+        "perfil": 4,
+        "juego": 30,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 61,
+      "fields": {
+        "perfil": 4,
+        "juego": 13,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 62,
+      "fields": {
+        "perfil": 4,
+        "juego": 2,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 63,
+      "fields": {
+        "perfil": 4,
+        "juego": 14,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 64,
+      "fields": {
+        "perfil": 4,
+        "juego": 15,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 65,
+      "fields": {
+        "perfil": 4,
+        "juego": 25,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 66,
+      "fields": {
+        "perfil": 4,
+        "juego": 9,
+        "valor": 4
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 67,
+      "fields": {
+        "perfil": 4,
+        "juego": 8,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 68,
+      "fields": {
+        "perfil": 4,
+        "juego": 17,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 69,
+      "fields": {
+        "perfil": 4,
+        "juego": 35,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 70,
+      "fields": {
+        "perfil": 4,
+        "juego": 16,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 71,
+      "fields": {
+        "perfil": 4,
+        "juego": 20,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 72,
+      "fields": {
+        "perfil": 4,
+        "juego": 32,
+        "valor": 3
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 73,
+      "fields": {
+        "perfil": 4,
+        "juego": 34,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 74,
+      "fields": {
+        "perfil": 4,
+        "juego": 24,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 75,
+      "fields": {
+        "perfil": 4,
+        "juego": 27,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 76,
+      "fields": {
+        "perfil": 4,
+        "juego": 1,
+        "valor": 2
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 77,
+      "fields": {
+        "perfil": 4,
+        "juego": 31,
+        "valor": 5
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 78,
+      "fields": {
+        "perfil": 4,
+        "juego": 29,
+        "valor": 1
+        }
+    },
+
+{
+      "model": "recommendation.puntuacion",
+      "pk": 79,
+      "fields": {
+        "perfil": 4,
+        "juego": 33,
+        "valor": 2
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 79,
+      "fields": {
+        "perfil": 4,
+        "juego": 33,
+        "valor": 2
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 80,
+      "fields": {
+        "perfil": 5,
+        "juego": 23,
+        "valor": 5
+        }
+    },
+  {
+      "model": "recommendation.puntuacion",
+      "pk": 81,
+      "fields": {
+        "perfil": 5,
+        "juego": 18,
+        "valor": 5
+        }
+    }
 ]

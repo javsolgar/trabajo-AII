@@ -75,9 +75,12 @@ def almacena_noticias(soup_noticias, index):
         except AttributeError as e:
             url_juego = '-'
 
-        url_imagen = soup.find('img', class_=['br3', 'wi100'])['src']
-        if 'ficha' in url_imagen:
-            url_imagen='-'
+        try:
+            url_imagen = soup.find('img', class_=['br3', 'wi100'])['src']
+            if 'ficha' in url_imagen:
+                url_imagen = '-'
+        except TypeError as e:
+            url_imagen = '-'
 
         writer.add_document(titulo=titulo,
                             escritor=escritor,
