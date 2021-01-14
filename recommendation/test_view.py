@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from django.core.management import call_command
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
-
+from recommendation.form import FormularioJuegos
 from application.models import Perfil
 from recommendation.models import Juego, Puntuacion
 
