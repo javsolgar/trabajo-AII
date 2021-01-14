@@ -6,7 +6,6 @@ from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
 
 from application.models import Perfil
-from recommendation.form import FormularioJuegos
 from recommendation.models import Juego, Puntuacion
 
 index_news = './indices/IndexNewsGames'
@@ -134,6 +133,7 @@ class PostProcTestCase(APITestCase):
 
         response = self.client.get('/recommend_4_similar_games/')
         self.assertEqual(response.status_code, 200)
+
 
         response2 = self.client.get('/get_4_games/', {'juego_id': str(id_juego)})
         self.assertEqual(response2.status_code, 200)
