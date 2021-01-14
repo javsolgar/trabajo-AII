@@ -9,7 +9,7 @@ from recommendation.models import Juego, Puntuacion
 from whoosh.index import open_dir
 from whoosh.qparser import QueryParser
 
-from recommendation.recommendations import topMatches
+from recommendation.recommendations import topMatches, getRecommendations
 
 index_news = './indices/IndexNewsGames'
 index_games = './indices/IndexGames'
@@ -118,6 +118,7 @@ def get_ratings(request):
     return render(request, 'recommendation/list_ratings.html',
                   {'puntuaciones': puntuaciones, 'cantidad': cantidad})
 
+
 @authenticated
 def recomend_4_similars_games(request):
     form = FormularioJuegos()
@@ -140,3 +141,24 @@ def get_4_similars_games(request):
         return render(request, 'recommendation/juegos_similares.html', {'original': juego, 'juegos': juegos})
     else:
         return render(request, 'recommendation/juegos_similares.html')
+
+
+@authenticated
+def recomend_no_rated_games(request):
+    usuario = request.user
+    perfil = Perfil.objects.get(usuario=usuario)
+    shelf = shelve.open('dataRS.dat')
+    prefs = shelf['Prefs']
+    shelf.close()
+    rankings = getRecommendations(prefs, int(perfil.id))
+    recomendaciones = rankings[:4]
+    juegos = []
+
+    for recomendacion in recomendaciones:
+        juegos.append(Juego.objects.get(id=recomendacion[1]))
+
+    if len(juegos) > 0:
+
+        return render(request, 'recommendation/juegos_recomendados.html', {'juegos': juegos})
+    else:
+        return render(request, 'recommendation/juegos_recomendados.html')

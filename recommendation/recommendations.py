@@ -1,28 +1,30 @@
-#encoding:utf-8
+# encoding:utf-8
 
 from math import sqrt
+
 
 # Returns a distance-based similarity score for person1 and person2
 def sim_distance(prefs, person1, person2):
     # Get the list of shared_items
     si = {}
-    for item in prefs[person1]: 
+    for item in prefs[person1]:
         if item in prefs[person2]: si[item] = 1
 
         # if they have no ratings in common, return 0
         if len(si) == 0: return 0
 
         # Add up the squares of all the differences
-        sum_of_squares = sum([pow(prefs[person1][item] - prefs[person2][item], 2) 
-                    for item in prefs[person1] if item in prefs[person2]])
-        
+        sum_of_squares = sum([pow(prefs[person1][item] - prefs[person2][item], 2)
+                              for item in prefs[person1] if item in prefs[person2]])
+
         return 1 / (1 + sum_of_squares)
+
 
 # Returns the Pearson correlation coefficient for p1 and p2
 def sim_pearson(prefs, p1, p2):
     # Get the list of mutually rated items
     si = {}
-    for item in prefs[p1]: 
+    for item in prefs[p1]:
         if item in prefs[p2]: si[item] = 1
 
     # if they are no ratings in common, return 0
@@ -37,7 +39,7 @@ def sim_pearson(prefs, p1, p2):
 
     # Sums of the squares
     sum1Sq = sum([pow(prefs[p1][it], 2) for it in si])
-    sum2Sq = sum([pow(prefs[p2][it], 2) for it in si])	
+    sum2Sq = sum([pow(prefs[p2][it], 2) for it in si])
 
     # Sum of the products
     pSum = sum([prefs[p1][it] * prefs[p2][it] for it in si])
@@ -51,14 +53,16 @@ def sim_pearson(prefs, p1, p2):
 
     return r
 
-# Returns the best matches for person from the prefs dictionary. 
+
+# Returns the best matches for person from the prefs dictionary.
 # Number of results and similarity function are optional params.
 def topMatches(prefs, person, n=5, similarity=sim_pearson):
-    scores = [(similarity(prefs, person, other), other) 
-                for other in prefs if other != person]
+    scores = [(similarity(prefs, person, other), other)
+              for other in prefs if other != person]
     scores.sort()
     scores.reverse()
     return scores[0:n]
+
 
 # Gets recommendations for a person by using a weighted average of every other user's rankings
 def getRecommendations(prefs, person, similarity=sim_pearson):
@@ -87,12 +91,13 @@ def getRecommendations(prefs, person, similarity=sim_pearson):
     rankings.reverse()
     return rankings
 
+
 def transformPrefs(prefs):
     result = {}
     for person in prefs:
         for item in prefs[person]:
             result.setdefault(item, {})
-    
+
             # Flip item and person
             result[item][person] = prefs[person][item]
     return result
@@ -108,11 +113,12 @@ def calculateSimilarItems(prefs, n=10):
     for item in itemPrefs:
         # Status updates for large datasets
         c += 1
-        if c % 100 == 0: print ("%d / %d" % (c, len(itemPrefs)))
+        if c % 100 == 0: print("%d / %d" % (c, len(itemPrefs)))
         # Find the most similar items to this one
         scores = topMatches(itemPrefs, item, n=n, similarity=sim_distance)
         result[item] = scores
     return result
+
 
 def getRecommendedItems(prefs, itemMatch, user):
     userRatings = prefs[user]
@@ -122,7 +128,7 @@ def getRecommendedItems(prefs, itemMatch, user):
     for (item, rating) in userRatings.items():
         # Loop over items similar to this one
         for (similarity, item2) in itemMatch[item]:
-            print (item2)
+            print(item2)
             # Ignore if this user has already rated this item
             if item2 in userRatings: continue
             # Weighted sum of rating times similarity
@@ -142,4 +148,3 @@ def getRecommendedItems(prefs, itemMatch, user):
     rankings.sort()
     rankings.reverse()
     return rankings
-

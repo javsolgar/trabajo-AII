@@ -124,7 +124,7 @@ class PostProcTestCase(APITestCase):
         puntuaciones = response.context['puntuaciones']
         self.assertEqual(len(puntuaciones), 6)
 
-    def test_recomienda_4_juegos(self):
+    def test_recomienda_4_juegos_similares(self):
         self.inicializa_RS()
 
         username = 'prueba'
@@ -139,4 +139,18 @@ class PostProcTestCase(APITestCase):
         self.assertEqual(response2.status_code, 200)
 
         juegos = response2.context['juegos']
+        self.assertEqual(len(juegos), 4)
+
+    def test_recomienda_juegos_usuario(self):
+        self.inicializa_RS()
+
+        username = 'prueba'
+        password = '963852741A'
+
+        self.client.login(username=username, password=password)
+
+        response = self.client.get('/recommend_no_rated_games/')
+        self.assertEqual(response.status_code, 200)
+
+        juegos = response.context['juegos']
         self.assertEqual(len(juegos), 4)
