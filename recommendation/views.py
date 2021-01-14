@@ -1,3 +1,4 @@
+import os
 import shelve
 
 from django.shortcuts import render, get_object_or_404
@@ -131,7 +132,7 @@ def get_4_similars_games(request):
     if form.is_valid():
         id_juego = form.cleaned_data.get('juego_id')
         juego = get_object_or_404(Juego, pk=id_juego)
-        shelf = shelve.open("dataRS.dat")
+        shelf = shelve.open("./recommendation/data/dataRS.dat")
         ItemsPrefs = shelf['ItemsPrefs']
         shelf.close()
         recomendaciones = topMatches(ItemsPrefs, int(id_juego), n=4)
@@ -147,7 +148,7 @@ def get_4_similars_games(request):
 def recomend_no_rated_games(request):
     usuario = request.user
     perfil = Perfil.objects.get(usuario=usuario)
-    shelf = shelve.open('dataRS.dat')
+    shelf = shelve.open('./recommendation/data/dataRS.dat')
     prefs = shelf['Prefs']
     shelf.close()
     rankings = getRecommendations(prefs, int(perfil.id))

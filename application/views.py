@@ -119,7 +119,7 @@ def carga_juegos_bd(request):
 @is_admin
 def carga_rs(request):
     Prefs = {}  # matriz de usuarios y puntuaciones a cada a items
-    shelf = shelve.open("dataRS.dat")
+    shelf = shelve.open('../trabajo-AII/recommendation/data/dataRS.dat')
     puntuaciones = Puntuacion.objects.all()
     for puntuacion in puntuaciones:
         perfil = int(puntuacion.perfil.id)
