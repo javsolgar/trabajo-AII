@@ -5,10 +5,38 @@
 {% endblock %}
 
 {% block encabezado %}
-    <h1>Inicio</h1>
-
+    <div class="container" style="margin-top:30px">
+        <h1>Inicio</h1>
+    </div>
 {% endblock %}
 
 {% block contenido %}
-<p>Trabajo realizado por Javier Solís García</p>
+
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>Usuarios registrados:</h2>
+                <br>
+                <h5>Administrador:</h5>
+                <ul>
+                    <li><b>Usuario:</b> admin</li>
+                    <li><b>Contraseña:</b> admin</li>
+                </ul>
+                <h5>Prueba:</h5>
+                <ul>
+                    <li><b>Usuario:</b> prueba</li>
+                    <li><b>Contraseña:</b> 963852741A</li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+            <div class="col-sm-8">
+                <h2>Información sobre el sistema de recomendación</h2>
+                <p>Para probar el sistema de recomendación se debe entrar como el usuario "Prueba". Esto se debe a que el resto de usuarios, o bien han valorado ya todos los juegos existentes, o bien han valorado pocos títulos, lo que puede provocar que el sistema no pueda recomendar adecuadamente.</p>
+                <p>En caso de que se quiera acceder como el resto de usuarios registrados en la web, los cuales fueron registrados únicamente para generar recomendaciones, sus nombres son: prueba2, prueba3 y prueba4. La contraseña de estos usuarios es la misma que la del usuario de prueba.</p>
+                <h6>Trabajo realizado por Javier Solís García</h6>
+                {% load static %}
+                <a class="btn btn-primary" href="https://github.com/javsolgar/trabajo-AII">Repositorio en GitHub    <img src="{% static 'img/GitHub-Mark-Light-32px.png' %}"  width="24" height="24"></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
