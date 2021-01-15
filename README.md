@@ -5,7 +5,7 @@ Trabajo realizado por Javier Solís García para la asignatura de Acceso Intelig
 
 **Índice:**
 
-1. [Objetivos de la aplicación](https://github.com/javsolgar/trabajo-AII)
+1. [Objetivos de la aplicación](https://github.com/javsolgar/trabajo-AII#objetivos-de-la-aplicaci%C3%B3n)
 2. [Descripción de las partes del proyecto y el uso de las herramientas](https://github.com/javsolgar/trabajo-AII#descripci%C3%B3n-de-las-partes-del-proyecto-y-el-uso-de-las-herramientas)
 3. [Manual de uso](https://github.com/javsolgar/trabajo-AII#manual-de-uso)
 
