@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from application.models import Perfil
 
@@ -31,4 +32,4 @@ class Juego(models.Model):
 class Puntuacion(models.Model):
     perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     juego = models.ForeignKey(Juego, on_delete=models.CASCADE)
-    valor = models.IntegerField(default=0)
+    valor = models.IntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(2)])
