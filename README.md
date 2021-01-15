@@ -3,11 +3,11 @@
 # trabajo-AII
 Trabajo realizado por Javier Solís García para la asignatura de Acceso Inteligente a la Información.
 
-Índice:
+**Índice:**
 
-1. [Objetivos de la aplicación](https://github.com/javsolgar/trabajo-AII/tree/mainn#objetivos-de-la-aplicaci%C3%B3n)
-2. [Descripción de las partes del proyecto y el uso de las herramientas](https://github.com/javsolgar/trabajo-AII/tree/main#descripci%C3%B3n-de-las-partes-del-proyecto-y-el-uso-de-las-herramientas)
-3. [Manual de uso](https://github.com/javsolgar/trabajo-AII/tree/main#manual-de-uso)
+1. [Objetivos de la aplicación](https://github.com/javsolgar/trabajo-AII)
+2. [Descripción de las partes del proyecto y el uso de las herramientas](https://github.com/javsolgar/trabajo-AII#descripci%C3%B3n-de-las-partes-del-proyecto-y-el-uso-de-las-herramientas)
+3. [Manual de uso](https://github.com/javsolgar/trabajo-AII#manual-de-uso)
 
 ## Objetivos de la aplicación
 
