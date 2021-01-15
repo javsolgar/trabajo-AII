@@ -3,6 +3,12 @@
 # trabajo-AII
 Trabajo realizado por Javier Solís García para la asignatura de Acceso Inteligente a la Información.
 
+Índice:
+
+1. [Objetivos de la aplicación](https://github.com/javsolgar/trabajo-AII/tree/mainn#objetivos-de-la-aplicaci%C3%B3n)
+2. [Descripción de las partes del proyecto y el uso de las herramientas](https://github.com/javsolgar/trabajo-AII/tree/main#descripci%C3%B3n-de-las-partes-del-proyecto-y-el-uso-de-las-herramientas)
+3. [Manual de uso](https://github.com/javsolgar/trabajo-AII/tree/main#manual-de-uso)
+
 ## Objetivos de la aplicación
 
 Este proyecto tiene dos objetivos claros:
@@ -47,28 +53,47 @@ Al igual que con la descarga de noticias, se ha usado Beautifulsoup 4, para obte
 
 ### Recomendaciones
 
-Este módulo otorga al usuario la posibilidad de obtener recomendaciones en función de puntuaciones creadas por él y por otros usuarios. Para ello se han cargado los juegos almacenados en el módulo de Videojuegos en una base de datos de SQLite 3.
+Este módulo otorga al usuario la posibilidad de obtener recomendaciones en función de puntuaciones creadas por él y por otros usuarios. Para ello se han cargado los juegos almacenados en el módulo de [videojuegos](https://github.com/javsolgar/trabajo-AII/blob/finalizaci%C3%B3n/README.md#videojuegos) en una base de datos de SQLite 3.
 
+El módulo de recomendaciones permite listar los juegos almacenados en la base de datos, pero con la adición de que estos son puntuables con estrellas. 
+Las puntuaciones serán la herramienta que se utilizará para poder realizar las funcionalidades de este módulo, las cuales son: recomendar 4 juegos similares a uno dado, y recomendar juegos no puntuados por un usuario.
+
+Para este módulo se han utilizado SQLite 3 y los sistemas de recomendación vistos en clase.
+
+Para acelerar la carga de los datos iniciales del sistema de recomendación, y asegurar que no se pierden, se ha creado un fichero [initial_data.json](https://github.com/javsolgar/trabajo-AII/blob/main/initial_data.json). Este fichero contiene los datos de 5 usuarios (uno de ellos con permisos de administrador), 35 juegos, 15 tipos de etiquetas de cantidad de jugadores, 28 desarrolladores, 58 géneros, 17 plataformas y 81 puntuaciones a juegos generadas de forma aleatoria.
+
+### Pruebas
+
+Adicionalmente a lo anterior, para comprobar el correcto funcionamiento de la aplicación web, se han implementado pruebas de las vistas y pruebas de interfaz.
+
+Estas pruebas se han automatizado en el repositorio de GitHub con la implementación del sistema de integración continua [Travis](https://github.com/javsolgar/trabajo-AII/blob/main/.travis.yml).
+En total se han desarrollado un total de 26 pruebas, en las que se ha utilizado Selenium, DjangoRestFramework y el propio Travis.
+
+Para hacer más fácil la instalación de todos los requisitos para hacer funcionar correctamente la aplicación, se ha creado un fichero [requirements.txt](https://github.com/javsolgar/trabajo-AII/blob/main/requirements.txt) que contiene todas las librerías a instalar. 
+
+## Manual de uso
+
+Nada más acceder a la aplicación, tras clonar el repositorio y ejecutar el comando `pip install -r requirements.txt` para instalar las librerías, y `python ./manage.py runserver` para ejecutar la aplicación, nos encontraremos en el menú de inicio, en el cuál podremos obtener información sobre las cuentas registradas previamente.
+
+Adicionalmente tendremos las siguientes acciones disponibles:
+- **Noticias:** se podrá ver la lista de noticias de la web y filtrar las noticias por juegos.
+- **Juegos:** se podrá ver la lista de juegos de la web y filtrar los juegos por título, plataforma o género.
+- **Acceder:** se podrá iniciar sesión o registrarse.
+
+Si iniciamos sesión, se nos habilitará la sección de **recomendaciones**, desde la que podremos ver la lista de juegos puntuables y acceder a las opciones de; recomendar 4 juegos simulares a uno dado, y recomendar juegos no puntuados por el usuario. Para probar el módulo de recomendaciones, se debe iniciar con el **usuario “prueba”**, ya que el resto de los usuarios, o bien han puntuado ya todos los juegos, o bien no han puntuado los suficientes, lo que puede provocar que el sistema no tenga recomendaciones para ellos.
+
+En el **menú de la cuenta de usuario** se podrá ver la lista de puntuaciones realizadas por el usuario y también aparecerá la opción de cerrar sesión.
+
+Adicionalmente, en el caso de que se inicie sesión como **admin**, también se podrá refrescar el contenido del módulo de juegos y el módulo de noticias, además pasar juegos del módulo de juegos al módulo de recomendaciones, y recargar el propio sistema de recomendación.
 
 ### Usuarios registrados:
 
-- admin:
+1. admin:
     - usuario: admin
     - contraseña: admin
     
-- prueba:
+2. prueba:
     - usuario: prueba
     - contraseña: 963852741A
   
-- prueba2:
-    - usuario: prueba2
-    - contraseña: 963852741A
-  
-- prueba3:
-    - usuario: prueba3
-    - contraseña: 963852741A
-  
-- prueba3:
-    - usuario: prueba3
-    - contraseña: 963852741A
-    
+Existen otros 3 usuarios a los que no se les debería de acceder, pero si se desea, comporten la contraseña con el usuario prueba y sus usuarios son: prueba2, prueba3, prueba4
