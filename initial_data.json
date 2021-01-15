@@ -101,40 +101,35 @@
   "model": "application.perfil",
   "pk": 1,
   "fields": {
-    "usuario": 1,
-    "intereses": ""
+    "usuario": 1
   }
 },
 {
   "model": "application.perfil",
   "pk": 2,
   "fields": {
-    "usuario": 2,
-    "intereses": ""
+    "usuario": 2
   }
 },
   {
   "model": "application.perfil",
   "pk": 3,
   "fields": {
-    "usuario": 3,
-    "intereses": ""
+    "usuario": 3
   }
 },
   {
   "model": "application.perfil",
   "pk": 4,
   "fields": {
-    "usuario": 4,
-    "intereses": ""
+    "usuario": 4
   }
 },
     {
   "model": "application.perfil",
   "pk": 5,
   "fields": {
-    "usuario": 5,
-    "intereses": ""
+    "usuario": 5
   }
 },
   {
